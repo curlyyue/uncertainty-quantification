@@ -10,7 +10,7 @@ img_dir = os.path.join(path,'train_signs')
 
 transform = None
 
-def split_dataset(anno_path:str, ind, ood):
+def split_dataset(anno_path:str, ind:list, ood:list):
     '''
     to split dataset according to list of in-distribution and ood
     '''
@@ -18,9 +18,9 @@ def split_dataset(anno_path:str, ind, ood):
     ind_list = []
     ood_list = []
     for i in range(len(label)):
-        if label.iloc[i][4] in ind_list:
+        if label.iloc[i][4] in ind:
             ind_list.append(label.iloc[i])
-        elif label.iloc[i][4] in ood_list:
+        elif label.iloc[i][4] in ood:
             ood_list.append(label.iloc[i])
     return ind_list, ood_list
 
@@ -34,5 +34,5 @@ ood_dataset = CustomImageDataset(ood_labels, img_dir, transform)
 ind_dataset = CustomImageDataset(ind_labels, img_dir, transform)
 
 
-# im, l = ood_dataset[1]
-# print(l)
+im, l = ood_dataset[1]
+print(l)
