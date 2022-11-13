@@ -1,13 +1,10 @@
 import torch
 import numpy as np
+import os
+import wandb
 
 
-use_cuda = torch.cuda.is_available()
-device = torch.device("cuda" if use_cuda else "cpu")
-torch.backends.cudnn.benchmark = True
-
-
-def compute_loss_accuracy(model, loader):
+def compute_loss_accuracy(model, loader, device):
     model.eval()
     with torch.no_grad():
         loss = 0
@@ -30,50 +27,55 @@ def compute_loss_accuracy(model, loader):
 
 
 # Joint training for full model
-def train(model, train_loader, val_loader, max_epochs=200, frequency=2, patience=5, model_path='saved_model', full_config_dict={}):
-    model.to(device)
+def train(model, train_loader, val_loader, config):
+    device = config['device']
     model.train()
-    train_losses, val_losses, train_accuracies, val_accuracies = [], [], [], []
+    #train_losses, val_losses, train_accuracies, val_accuracies = [], [], [], []
     best_val_loss = float("Inf")
-
-    for epoch in range(max_epochs):
+    print('Training starts')
+    for epoch in range(config['max_epochs']):
         for batch_index, (X_train, Y_train) in enumerate(train_loader):
             Y_train_hot = torch.zeros(Y_train.shape[0], train_loader.dataset.output_dim)
             Y_train_hot.scatter_(1, Y_train, 1)
             X_train, Y_train_hot = X_train.to(device), Y_train_hot.to(device)
             model(X_train, Y_train_hot)
             model.step()
+            wandb.log({"Train loss": model.loss})
 
-        if epoch % frequency == 0:
-            # Stats on data sets
-            # train_loss, train_accuracy = compute_loss_accuracy(model, train_loader)
-            # train_losses.append(round(train_loss, 3))
-            # train_accuracies.append(round(train_accuracy, 3))
 
-            val_loss, val_accuracy = compute_loss_accuracy(model, val_loader)
-            val_losses.append(val_loss)
-            val_accuracies.append(val_accuracy)
+        # Stats on data sets
+        # train_loss, train_accuracy = compute_loss_accuracy(model, train_loader)
+        # train_losses.append(round(train_loss, 3))
+        # train_accuracies.append(round(train_accuracy, 3))
+        val_loss, val_accuracy = compute_loss_accuracy(model, val_loader)
+        wandb.log({"Val loss": val_loss})
+        wandb.log({"Val accuracy": val_accuracy})
 
-            print("Epoch {} -> Val loss {} | Val Acc.: {}".format(epoch, round(val_losses[-1], 3), round(val_accuracies[-1], 3)))
+        # val_losses.append(val_loss)
+        # val_accuracies.append(val_accuracy)
 
-            if val_losses[-1] < -1.:
-                print("Unstable training")
-                break
+        print("Epoch {} -> Val loss {} | Val Acc.: {}".format(epoch, round(val_loss, 3), round(val_accuracy, 3)))
 
-            if best_val_loss > val_losses[-1]:
-                best_val_loss = val_losses[-1]
-                torch.save({'epoch': epoch, 'model_config_dict': full_config_dict, 'model_state_dict': model.state_dict(), 'loss': best_val_loss}, model_path)
-                print('Model saved')
+        if np.isnan(val_loss):
+            print('Detected NaN Loss')
+            break
 
-            if np.isnan(val_losses[-1]):
-                print('Detected NaN Loss')
-                break
+        if val_loss < -1.:
+            print("Unstable training")
+            break
 
-            if int(epoch / frequency) > patience and val_losses[-patience] <= min(val_losses[-patience:]):
-                print('Early Stopping.')
-                break
+        if best_val_loss > val_loss:
+            best_val_loss = val_loss
+            torch.save({'epoch': epoch, 'model_state_dict': model.state_dict(), 'val_acc': val_accuracy}, 
+                        os.path.join(config['save_dir'], 'best_model.pth'))
+            print('Model saved')
+        
+        # fix early stopping
+        # if epoch > patience and val_losses[-patience] <= min(val_losses[-patience:]):
+        #     print('Early Stopping.')
+        #     break
 
-    return train_losses, val_losses, train_accuracies, val_accuracies
+    return #train_losses, val_losses, train_accuracies, val_accuracies
 
 
 # Joint training method for ablated model
