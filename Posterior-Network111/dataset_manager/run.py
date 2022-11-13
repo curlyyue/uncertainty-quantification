@@ -18,9 +18,9 @@ def split_dataset(anno_path:str, ind:list, ood:list):
     ind_list = []
     ood_list = []
     for i in range(len(label)):
-        if label.iloc[i][4] in ind:
+        if label.iloc[i][5] in ind:
             ind_list.append(label.iloc[i])
-        elif label.iloc[i][4] in ood:
+        elif label.iloc[i][5] in ood:
             ood_list.append(label.iloc[i])
     return ind_list, ood_list
 

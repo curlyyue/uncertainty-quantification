@@ -20,11 +20,11 @@ class CustomImageDataset(Dataset):
         return len(self.img_labels)
 
     def __getitem__(self, idx):
-        region = self.img_labels[idx][4]
-        img_path = (f'{self.img_dir}/{self.img_labels[idx][1]}.npy')
+        region = self.img_labels[idx][5]
+        img_path = (f'{self.img_dir}/{self.img_labels[idx][1]}.npy') # here is the dir of sign_image
         image = np.load(img_path)
-        label = self.img_labels[idx][2]
-        detail = self.img_labels[idx][3]
+        label = self.img_labels[idx][3]
+        detail = self.img_labels[idx][4]
         flabel = [label, detail, region]
         if self.transform:
             image = self.transform(image)
