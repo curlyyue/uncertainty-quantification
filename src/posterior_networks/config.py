@@ -2,8 +2,8 @@ config = dict(
 seed = 1,  # Seed for training
 dataset_path='/lab/project-1/',
 train_csv='/lab/project-1/train_label.csv',
-val_csv='/lab/project-1/train_label.csv', 
-test_csv='/lab/project-1/train_label.csv',
+val_csv='/lab/project-1/test_label.csv', 
+test_csv='/lab/project-1/test_label.csv',
 # dataset_name,  # Dataset name. string
 ood_regions=['g6'],  # OOD dataset regions (g1-g6).  list of strings
 # unscaled_ood,  # If true consider also unscaled versions of ood datasets ?

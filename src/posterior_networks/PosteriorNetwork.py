@@ -22,7 +22,6 @@ __budget_functions__ = {'one': lambda N: torch.ones_like(N),
 
 class PosteriorNetwork(nn.Module):
     def __init__(self, N,  # Count of data from each class in training set. list of ints
-                 #input_dims,  # Input dimension. list of ints
                  n_classes,  # Output dimension. int
                  hidden_dims=[64, 64, 64],  # Hidden dimensions. list of ints
                  kernel_dim=None,  # Kernel dimension if conv architecture. int
@@ -43,9 +42,8 @@ class PosteriorNetwork(nn.Module):
         torch.cuda.manual_seed(seed)
         torch.set_default_tensor_type(torch.DoubleTensor)
 
-        input_dims = 3 
         # Architecture parameters
-        self.input_dims, self.output_dim, self.hidden_dims, self.kernel_dim, self.latent_dim = input_dims, n_classes, hidden_dims, kernel_dim, latent_dim
+        self.output_dim, self.hidden_dims, self.kernel_dim, self.latent_dim = n_classes, hidden_dims, kernel_dim, latent_dim
         self.k_lipschitz = k_lipschitz
         self.no_density, self.density_type, self.n_density = no_density, density_type, n_density
         if budget_function in __budget_functions__:
@@ -71,13 +69,11 @@ class PosteriorNetwork(nn.Module):
         #                                                     kernel_dim=self.kernel_dim,
         #                                                     k_lipschitz=self.k_lipschitz)
         if architecture == 'vgg':
-            #assert len(input_dims) == 3
-            self.sequential = vgg16_bn(output_dim=self.latent_dim, k_lipschitz=self.k_lipschitz)
+            self.sequential = vgg16_bn(output_dim=self.latent_dim, 
+                                        k_lipschitz=self.k_lipschitz)
         elif architecture == 'resnet':
-            #assert len(input_dims) == 3
             self.sequential = resnet18(output_dim=self.latent_dim)
         elif architecture == 'alexnet':
-            #assert len(input_dims) == 3
             self.sequential = alexnet(output_dim=self.latent_dim)
         else:
             raise NotImplementedError
@@ -107,7 +103,6 @@ class PosteriorNetwork(nn.Module):
 
     def forward(self, input, soft_output, return_output='hard', compute_loss=True):
         batch_size = input.size(0)
-        print(input.shape)
         if self.N.device != input.device:
             self.N = self.N.to(input.device)
 
