@@ -53,11 +53,6 @@ def run(config):
     test_dataloader, ood_test_dataloader = split_id_ood(config, split='test')
     N = train_dataloader.dataset.N
     print("Datasets and Dataloaders created")
-    # dataset = ClassificationDataset(f'{directory_dataset}/{dataset_name}.csv',
-    #                                 input_dims=input_dims, output_dim=output_dim,
-    #                                 transform_min=transform_min, transform_max=transform_max,
-    #                                 seed=seed_dataset)
-    # train_loader, val_loader, test_loader, N = dataset.split(batch_size=batch_size, split=split, num_workers=4)
 
     #################
     ## Train model ##

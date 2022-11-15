@@ -4,13 +4,10 @@ from torch import nn
 from torch import autograd
 from torch.distributions.dirichlet import Dirichlet
 from src.architectures.linear_sequential import linear_sequential
-from src.architectures.convolution_linear_sequential import convolution_linear_sequential
-from src.architectures.vgg_sequential import vgg16_bn
-from src.architectures.resnet_sequential import resnet18
-from src.architectures.alexnet_sequential import alexnet
 from src.posterior_networks.NormalizingFlowDensity import NormalizingFlowDensity
 from src.posterior_networks.BatchedNormalizingFlowDensity import BatchedNormalizingFlowDensity
 from src.posterior_networks.MixtureDensity import MixtureDensity
+from src.posterior_networks.config import pretrained_info
 
 __budget_functions__ = {'one': lambda N: torch.ones_like(N),
                         'log': lambda N: torch.log(N + 1.),
@@ -55,28 +52,16 @@ class PosteriorNetwork(nn.Module):
         self.loss, self.regr = loss, regr
 
         # Encoder -- Feature selection
-        # if architecture == 'linear':
-        #     self.sequential = linear_sequential(input_dims=self.input_dims,
-        #                                         hidden_dims=self.hidden_dims,
-        #                                         output_dim=self.latent_dim,
-        #                                         k_lipschitz=self.k_lipschitz)
-        # elif architecture == 'conv':
-        #     assert len(input_dims) == 3
-        #     self.sequential = convolution_linear_sequential(input_dims=self.input_dims,
-        #                                                     linear_hidden_dims=self.hidden_dims,
-        #                                                     conv_hidden_dims=[64, 64, 64],
-        #                                                     output_dim=self.latent_dim,
-        #                                                     kernel_dim=self.kernel_dim,
-        #                                                     k_lipschitz=self.k_lipschitz)
-        if architecture == 'vgg':
-            self.sequential = vgg16_bn(output_dim=self.latent_dim, 
-                                        k_lipschitz=self.k_lipschitz)
-        elif architecture == 'resnet':
-            self.sequential = resnet18(output_dim=self.latent_dim)
-        elif architecture == 'alexnet':
-            self.sequential = alexnet(output_dim=self.latent_dim)
-        else:
+        if architecture not in pretrained_info:
             raise NotImplementedError
+        model_info = pretrained_info[architecture]
+        model = torch.hub.load("pytorch/vision", architecture, 
+                               weights=model_info['weights'],
+                               )
+        self.sequential = torch.nn.Sequential(*(list(model.children())[:-1]),
+                                    nn.Flatten(), 
+                                    nn.Linear(model_info['hidden_dim'], self.latent_dim)
+        )
         self.batch_norm = nn.BatchNorm1d(num_features=self.latent_dim)
         self.linear_classifier = linear_sequential(input_dims=[self.latent_dim],  # Linear classifier for sequential training
                                                    hidden_dims=[self.hidden_dims[-1]],
@@ -167,7 +152,6 @@ class PosteriorNetwork(nn.Module):
             alpha_0 = alpha.sum(1).unsqueeze(-1).repeat(1, self.output_dim)
             entropy_reg = Dirichlet(alpha).entropy()
             UCE_loss = torch.sum(soft_output * (torch.digamma(alpha_0) - torch.digamma(alpha))) - self.regr * torch.sum(entropy_reg)
-
             return UCE_loss
 
     def step(self):

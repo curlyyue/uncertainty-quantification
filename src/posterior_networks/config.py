@@ -2,7 +2,7 @@ config = dict(
 seed = 1,  # Seed for training
 dataset_path='/lab/project-1/',
 train_csv='/lab/project-1/train_label.csv',
-val_csv='/lab/project-1/test_label.csv', 
+val_csv='/lab/project-1/val_label.csv', 
 test_csv='/lab/project-1/test_label.csv',
 # dataset_name,  # Dataset name. string
 ood_regions=['g6'],  # OOD dataset regions (g1-g6).  list of strings
@@ -12,7 +12,7 @@ ood_regions=['g6'],  # OOD dataset regions (g1-g6).  list of strings
 
 # Architecture parameters
 #model_save_dir = 'models/exp',  # Path to save model. string
-architecture = 'resnet',  # Encoder architecture name. string
+architecture = 'resnet18',  # Encoder architecture name, should be from pretrained_info. string
 # input_dims,  # Input dimension. List of ints
 # n_classes=4,  # Output dimension. int
 hidden_dims=[64, 64, 64],  # Hidden dimensions. list of ints
@@ -37,4 +37,10 @@ regr=1e-5, # Regularization factor in Bayesian loss. float
 
 WANDB_KEY = "ca13bbfeb8b55c13cc7a761af71fd11b88c907bf" 
 
+)
+
+pretrained_info = dict(
+    resnet18={'weights': "IMAGENET1K_V1", 'hidden_dim': 512},
+    resnet50={'weights': "IMAGENET1K_V2", 'hidden_dim': 2048},
+    efficientnetv2={'weights': "IMAGENET1K_V1", 'hidden_dim': 1280}
 )
