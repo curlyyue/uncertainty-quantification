@@ -142,17 +142,17 @@ class PosteriorNetwork(nn.Module):
             raise AssertionError
 
     def CE_loss(self, soft_output_pred, soft_output):
-        with autograd.detect_anomaly():
-            CE_loss = - torch.sum(soft_output.squeeze() * torch.log(soft_output_pred))
+        # with autograd.detect_anomaly():
+        CE_loss = - torch.sum(soft_output.squeeze() * torch.log(soft_output_pred))
 
-            return CE_loss
+        return CE_loss
 
     def UCE_loss(self, alpha, soft_output):
-        with autograd.detect_anomaly():
-            alpha_0 = alpha.sum(1).unsqueeze(-1).repeat(1, self.output_dim)
-            entropy_reg = Dirichlet(alpha).entropy()
-            UCE_loss = torch.sum(soft_output * (torch.digamma(alpha_0) - torch.digamma(alpha))) - self.regr * torch.sum(entropy_reg)
-            return UCE_loss
+        # with autograd.detect_anomaly():
+        alpha_0 = alpha.sum(1).unsqueeze(-1).repeat(1, self.output_dim)
+        entropy_reg = Dirichlet(alpha).entropy()
+        UCE_loss = torch.sum(soft_output * (torch.digamma(alpha_0) - torch.digamma(alpha))) - self.regr * torch.sum(entropy_reg)
+        return UCE_loss
 
     def step(self):
         self.optimizer.zero_grad()

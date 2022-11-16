@@ -12,15 +12,14 @@ import wandb
 import numpy as np
 
 # to do
-# fix encoder - generic?
 # logic for ood evaluation and test() - ???
 
 # augmentations?
 # resize problem in dataset
 # check N
 # check k_lipschitz
+# check unscaled_ood
 
-# early stopping - from pytorch easy
 # how was img read done? RGB BGR?
 
 def run(config): 
@@ -51,7 +50,6 @@ def run(config):
     train_dataloader, ood_train_dataloader = split_id_ood(config, split='train')
     val_dataloader, ood_val_dataloader = split_id_ood(config, split='val')
     test_dataloader, ood_test_dataloader = split_id_ood(config, split='test')
-    print(ood_test_dataloader)
     N = train_dataloader.dataset.N
     print("Datasets and Dataloaders created")
 
@@ -82,7 +80,6 @@ def run(config):
     # model_path = f'{directory_model}/model-dpn-{full_config_name}'
     model.to(config['device'])
     if config['training_mode'] == 'joint':
-        train_losses, val_losses, train_accuracies, val_accuracies = \
         train(model, train_dataloader, val_dataloader, config=config)
     elif config['training_mode'] == 'sequential':
         assert not config['no_density']
@@ -103,26 +100,20 @@ def run(config):
     ## Test model ##
     ################
 
-    # ood_dataset_loaders = {}
     # for ood_dataset_name in ood_dataset_names:
-        
     #     if unscaled_ood:
             # dataset = ClassificationDataset(f'{directory_dataset}/{ood_dataset_name}.csv',
             #                                 input_dims=input_dims, output_dim=output_dim,
             #                                 seed=None)
             # ood_dataset_loaders[ood_dataset_name + '_unscaled'] = torch.utils.data.DataLoader(dataset, batch_size=2 * batch_size, num_workers=4, pin_memory=True)
+    ood_dataset_loaders = {}
+    ood_dataset_loaders['test'] = ood_test_dataloader
     result_path = os.path.join(config['save_dir'], 'best_model.pth')
     model.load_state_dict(torch.load(f'{result_path}')['model_state_dict'])
-    metrics = test(model, test_dataloader, ood_test_dataloader, result_path)
+    metrics = test(model, test_dataloader, ood_dataset_loaders, result_path)
     print(metrics)
 
-    results = {
-        'train_losses': train_losses,
-        'val_losses': val_losses,
-        'train_accuracies': train_accuracies,
-        'val_accuracies': val_accuracies,
-    }
     wandb.finish()
 
 
-    return {**results, **metrics}
+    return {**metrics}

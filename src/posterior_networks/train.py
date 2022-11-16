@@ -30,8 +30,9 @@ def compute_loss_accuracy(model, loader, device):
 def train(model, train_loader, val_loader, config):
     device = config['device']
     model.train()
-    train_losses, val_losses, train_accuracies, val_accuracies = [], [], [], []
+    # train_losses, val_losses, train_accuracies, val_accuracies = [], [], [], []
     best_val_loss = float("Inf")
+    bad_epochs = 0
     print('Training starts')
     for epoch in range(config['max_epochs']):
         for batch_index, (X_train, Y_train) in enumerate(train_loader):
@@ -44,15 +45,11 @@ def train(model, train_loader, val_loader, config):
 
         # Stats on data sets
         train_loss, train_accuracy = compute_loss_accuracy(model, train_loader, device)
-        train_losses.append(round(train_loss, 3))
-        train_accuracies.append(round(train_accuracy, 3))
+        wandb.log({"Train Accuracy": train_accuracy})
 
-        val_loss, val_accuracy = compute_loss_accuracy(model, val_loader, config['device'])
+        val_loss, val_accuracy = compute_loss_accuracy(model, val_loader, device)
         wandb.log({"Val loss": val_loss})
         wandb.log({"Val accuracy": val_accuracy})
-
-        # val_losses.append(val_loss)
-        # val_accuracies.append(val_accuracy)
 
         print("Epoch {} -> Val loss {} | Val Acc.: {}".format(epoch, round(val_loss, 3), round(val_accuracy, 3)))
 
@@ -68,15 +65,16 @@ def train(model, train_loader, val_loader, config):
             best_val_loss = val_loss
             torch.save({'epoch': epoch, 'model_state_dict': model.state_dict(), 'val_acc': val_accuracy}, 
                         os.path.join(config['save_dir'], 'best_model.pth'))
-            print('Model saved')
+            bad_epochs = 0
         
-        # fix early stopping
-        # if epoch > patience and val_losses[-patience] <= min(val_losses[-patience:]):
-        #     print('Early Stopping.')
-        #     break
+        else:
+            bad_epochs += 1
+        
+        if bad_epochs >= config['patience']:
+            print(f'Early stopping after epoch {epoch}')
+            break
 
-    return train_losses, val_losses, train_accuracies, val_accuracies
-
+    return
 
 # Joint training method for ablated model
 def train_sequential(model, train_loader, val_loader, max_epochs=200, frequency=2, patience=5, model_path='saved_model', full_config_dict={}):

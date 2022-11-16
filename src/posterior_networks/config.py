@@ -4,17 +4,13 @@ dataset_path='/lab/project-1/',
 train_csv='/lab/project-1/train_label.csv',
 val_csv='/lab/project-1/val_label.csv', 
 test_csv='/lab/project-1/test_label.csv',
-# dataset_name,  # Dataset name. string
 ood_regions=['g6'],  # OOD dataset regions (g1-g6).  list of strings
 # unscaled_ood,  # If true consider also unscaled versions of ood datasets ?
 # transform_min,  # Minimum value for rescaling input data. float ?
 # transform_max,  # Maximum value for rescaling input data. float ?
 
 # Architecture parameters
-#model_save_dir = 'models/exp',  # Path to save model. string
 architecture = 'resnet18',  # Encoder architecture name, should be from pretrained_info. string
-# input_dims,  # Input dimension. List of ints
-# n_classes=4,  # Output dimension. int
 hidden_dims=[64, 64, 64],  # Hidden dimensions. list of ints
 # kernel_dim,  # Input dimension. int
 latent_dim=32,  # Latent dimension. int
@@ -25,11 +21,10 @@ k_lipschitz=None,  # Lipschitz constant. float or None (if no lipschitz)
 budget_function='id',  # Budget function name applied on class count. name
 
 # Training parameters
-save_dir = 'models/exp',  # Path to save resutls. string
-max_epochs=20,  # Maximum number of epochs for training 
+save_dir = 'models/second_run',  # Path to save resutls. string
+max_epochs=10,  # Maximum number of epochs for training 
 patience=5,  # Patience for early stopping. int
-# frequency,  # Frequency for early stopping test. int
-batch_size=2,  # Batch size. int
+batch_size=512,  # Batch size. int
 lr=0.0001,  # Learning rate. float
 loss='UCE',  # Loss name. string
 training_mode='joint',  # 'joint' or 'sequential' training. string

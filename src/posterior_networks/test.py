@@ -34,31 +34,32 @@ def test(model, test_loader, ood_dataset_loaders, result_path='saved_results'):
         orig_Y_all, X_duplicate_all, alpha_pred_all = compute_X_Y_alpha(model, test_loader)
 
         # Save each data result
-        n_test_samples = orig_Y_all.size(0)
-        full_results_dict = {'Y': orig_Y_all.cpu().detach().numpy(),
-                             'X': X_duplicate_all.view(n_test_samples, -1).cpu().detach().numpy(),
-                             'alpha': alpha_pred_all.cpu().detach().numpy()}
-        with open(f'{result_path}.pickle', 'wb') as handle:
-            pickle.dump(full_results_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        # n_test_samples = orig_Y_all.size(0)
+        # full_results_dict = {'Y': orig_Y_all.cpu().detach().numpy(),
+        #                      'X': X_duplicate_all.view(n_test_samples, -1).cpu().detach().numpy(),
+        #                      'alpha': alpha_pred_all.cpu().detach().numpy()}
+        # with open(f'{result_path}.pickle', 'wb') as handle:
+        #     pickle.dump(full_results_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
         # Save metrics
         metrics = {}
         metrics['accuracy'] = accuracy(Y=orig_Y_all, alpha=alpha_pred_all)
-        metrics['confidence_aleatoric'] = confidence(Y= orig_Y_all, alpha=alpha_pred_all, score_type='APR', uncertainty_type='aleatoric')
-        metrics['confidence_epistemic'] = confidence(Y= orig_Y_all, alpha=alpha_pred_all, score_type='APR', uncertainty_type='epistemic')
+        metrics['confidence_aleatoric'] = confidence(Y= orig_Y_all, alpha=alpha_pred_all,
+                                                     score_type='APR', uncertainty_type='aleatoric')
+        metrics['confidence_epistemic'] = confidence(Y= orig_Y_all, alpha=alpha_pred_all, 
+                                                     score_type='APR', uncertainty_type='epistemic')
         metrics['brier_score'] = brier_score(Y= orig_Y_all, alpha=alpha_pred_all)
 
-        # for ood_dataset_name, ood_loader in ood_dataset_loaders.items():
-        #     ood_alpha_pred_all = compute_X_Y_alpha(model, ood_loader, alpha_only=True)
-        #     metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, ood_alpha=ood_alpha_pred_all, score_type='APR', uncertainty_type='aleatoric')
-        #     metrics[f'anomaly_detection_epistemic_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, ood_alpha=ood_alpha_pred_all, score_type='APR', uncertainty_type='epistemic')
-
-        # problem in this part
-        for ood_data in ood_dataset_loaders:
-            ood_alpha_pred_all = compute_X_Y_alpha(model, ood_data, alpha_only=True)
-            ood_dataset_name = config['ood_region']
-            metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, ood_alpha=ood_alpha_pred_all, score_type='APR', uncertainty_type='aleatoric')
-            metrics[f'anomaly_detection_epistemic_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, ood_alpha=ood_alpha_pred_all, score_type='APR', uncertainty_type='epistemic')
+        for ood_dataset_name, ood_loader in ood_dataset_loaders.items():
+            ood_alpha_pred_all = compute_X_Y_alpha(model, ood_loader, alpha_only=True)
+            metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, 
+                                                                                  ood_alpha=ood_alpha_pred_all, 
+                                                                                  score_type='APR', 
+                                                                                  uncertainty_type='aleatoric')
+            metrics[f'anomaly_detection_epistemic_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, 
+                                                                                  ood_alpha=ood_alpha_pred_all, 
+                                                                                  score_type='APR', 
+                                                                                  uncertainty_type='epistemic')
 
     return metrics
 
