@@ -53,6 +53,7 @@ def test(model, test_loader, ood_dataset_loaders, result_path='saved_results'):
         #     metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, ood_alpha=ood_alpha_pred_all, score_type='APR', uncertainty_type='aleatoric')
         #     metrics[f'anomaly_detection_epistemic_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, ood_alpha=ood_alpha_pred_all, score_type='APR', uncertainty_type='epistemic')
 
+        # problem in this part
         for ood_data in ood_dataset_loaders:
             ood_alpha_pred_all = compute_X_Y_alpha(model, ood_data, alpha_only=True)
             ood_dataset_name = config['ood_region']

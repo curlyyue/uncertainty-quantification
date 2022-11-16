@@ -1,0 +1,58 @@
+2022-11-15 15:49:25,036 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Configure stats pid to 1637445
+2022-11-15 15:49:25,036 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Loading settings from /nfs/homedirs/zhz/.config/wandb/settings
+2022-11-15 15:49:25,038 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Loading settings from /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/settings
+2022-11-15 15:49:25,038 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-11-15 15:49:25,038 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2022-11-15 15:49:25,040 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Applying login settings: {'api_key': '***REDACTED***'}
+2022-11-15 15:49:25,041 INFO    MainThread:1637445 [wandb_init.py:_log_setup():476] Logging user logs to /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_154925-3ek5a9rl/logs/debug.log
+2022-11-15 15:49:25,042 INFO    MainThread:1637445 [wandb_init.py:_log_setup():477] Logging internal logs to /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_154925-3ek5a9rl/logs/debug-internal.log
+2022-11-15 15:49:25,044 INFO    MainThread:1637445 [wandb_init.py:init():516] calling init triggers
+2022-11-15 15:49:25,046 INFO    MainThread:1637445 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {}
+2022-11-15 15:49:25,046 INFO    MainThread:1637445 [wandb_init.py:init():536] re-initializing run, found existing run on stack: jx8fzz19
+2022-11-15 15:49:25,051 INFO    MainThread:1637445 [wandb_run.py:_finish():1746] finishing run uncertainty_tum/test-project/jx8fzz19
+2022-11-15 15:49:25,052 INFO    MainThread:1637445 [jupyter.py:save_history():448] not saving jupyter history
+2022-11-15 15:49:25,054 INFO    MainThread:1637445 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2022-11-15 15:49:25,055 INFO    MainThread:1637445 [wandb_init.py:_jupyter_teardown():408] cleaning up jupyter logic
+2022-11-15 15:49:25,056 INFO    MainThread:1637445 [wandb_run.py:_atexit_cleanup():1949] got exitcode: 0
+2022-11-15 15:49:25,058 INFO    MainThread:1637445 [wandb_run.py:_restore():1932] restore
+2022-11-15 15:49:25,059 INFO    MainThread:1637445 [wandb_run.py:_restore():1938] restore done
+2022-11-15 15:49:30,093 INFO    MainThread:1637445 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2022-11-15 15:49:30,093 INFO    MainThread:1637445 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2022-11-15 15:49:30,102 INFO    MainThread:1637445 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2022-11-15 15:49:30,109 INFO    MainThread:1637445 [wandb_init.py:init():569] starting backend
+2022-11-15 15:49:30,109 INFO    MainThread:1637445 [wandb_init.py:init():573] setting up manager
+2022-11-15 15:49:30,119 INFO    MainThread:1637445 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-11-15 15:49:30,125 INFO    MainThread:1637445 [wandb_init.py:init():580] backend started and connected
+2022-11-15 15:49:30,151 INFO    MainThread:1637445 [wandb_run.py:_label_probe_notebook():1113] probe notebook
+2022-11-15 15:49:30,151 INFO    MainThread:1637445 [wandb_run.py:_label_probe_notebook():1123] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2022-11-15 15:49:30,153 INFO    MainThread:1637445 [wandb_init.py:init():658] updated telemetry
+2022-11-15 15:49:30,207 INFO    MainThread:1637445 [wandb_init.py:init():694] communicating run to backend with 60 second timeout
+2022-11-15 15:49:31,621 INFO    MainThread:1637445 [wandb_run.py:_on_init():2000] communicating current version
+2022-11-15 15:49:31,740 INFO    MainThread:1637445 [wandb_run.py:_on_init():2004] got version response 
+2022-11-15 15:49:31,740 INFO    MainThread:1637445 [wandb_init.py:init():728] starting run threads in backend
+2022-11-15 15:49:36,768 INFO    MainThread:1637445 [wandb_run.py:_console_start():1980] atexit reg
+2022-11-15 15:49:36,769 INFO    MainThread:1637445 [wandb_run.py:_redirect():1838] redirect: SettingsConsole.WRAP_RAW
+2022-11-15 15:49:36,771 INFO    MainThread:1637445 [wandb_run.py:_redirect():1903] Wrapping output streams.
+2022-11-15 15:49:36,772 INFO    MainThread:1637445 [wandb_run.py:_redirect():1925] Redirects installed.
+2022-11-15 15:49:36,772 INFO    MainThread:1637445 [wandb_init.py:init():765] run started, returning control to user process
+2022-11-15 15:55:26,552 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Configure stats pid to 1637445
+2022-11-15 15:55:26,553 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Loading settings from /nfs/homedirs/zhz/.config/wandb/settings
+2022-11-15 15:55:26,555 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Loading settings from /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/settings
+2022-11-15 15:55:26,555 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-11-15 15:55:26,558 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2022-11-15 15:55:26,558 INFO    MainThread:1637445 [wandb_setup.py:_flush():68] Applying login settings: {'api_key': '***REDACTED***'}
+2022-11-15 15:55:26,560 INFO    MainThread:1637445 [wandb_init.py:_log_setup():476] Logging user logs to /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_155526-37lf2xlw/logs/debug.log
+2022-11-15 15:55:26,562 INFO    MainThread:1637445 [wandb_init.py:_log_setup():477] Logging internal logs to /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_155526-37lf2xlw/logs/debug-internal.log
+2022-11-15 15:55:26,564 INFO    MainThread:1637445 [wandb_init.py:_jupyter_setup():426] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7f174f5043c8>
+2022-11-15 15:55:26,567 INFO    MainThread:1637445 [wandb_init.py:init():516] calling init triggers
+2022-11-15 15:55:26,568 INFO    MainThread:1637445 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {}
+2022-11-15 15:55:26,570 INFO    MainThread:1637445 [wandb_init.py:init():536] re-initializing run, found existing run on stack: 3ek5a9rl
+2022-11-15 15:55:26,573 INFO    MainThread:1637445 [wandb_run.py:_finish():1746] finishing run uncertainty_tum/test-project/3ek5a9rl
+2022-11-15 15:55:26,574 INFO    MainThread:1637445 [wandb_run.py:_atexit_cleanup():1949] got exitcode: 0
+2022-11-15 15:55:26,574 INFO    MainThread:1637445 [wandb_run.py:_restore():1932] restore
+2022-11-15 15:55:26,576 INFO    MainThread:1637445 [wandb_run.py:_restore():1938] restore done
+2022-11-15 15:55:32,792 INFO    MainThread:1637445 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2022-11-15 15:55:32,793 INFO    MainThread:1637445 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2022-11-15 15:55:32,801 INFO    MainThread:1637445 [wandb_run.py:_footer_sync_info():3333] logging synced files

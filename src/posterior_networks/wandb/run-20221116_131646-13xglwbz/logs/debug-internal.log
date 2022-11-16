@@ -1,0 +1,1061 @@
+2022-11-16 13:16:53,591 INFO    StreamThr :1724037 [internal.py:wandb_internal():91] W&B internal server running at pid: 1724037, started at: 2022-11-16 13:16:53.588538
+2022-11-16 13:16:53,595 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: status
+2022-11-16 13:16:53,598 DEBUG   SenderThread:1724037 [sender.py:send_request():317] send_request: status
+2022-11-16 13:16:53,603 DEBUG   SenderThread:1724037 [sender.py:send():303] send: header
+2022-11-16 13:16:53,603 INFO    WriterThread:1724037 [datastore.py:open_for_write():75] open: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/run-13xglwbz.wandb
+2022-11-16 13:16:53,604 DEBUG   SenderThread:1724037 [sender.py:send():303] send: run
+2022-11-16 13:16:54,038 INFO    SenderThread:1724037 [dir_watcher.py:__init__():216] watching files in: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files
+2022-11-16 13:16:54,039 INFO    SenderThread:1724037 [sender.py:_start_run_threads():931] run started: 13xglwbz with start time 1668601012.61848
+2022-11-16 13:16:54,041 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:16:54,048 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: check_version
+2022-11-16 13:16:54,049 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:16:54,051 DEBUG   SenderThread:1724037 [sender.py:send_request():317] send_request: check_version
+2022-11-16 13:16:54,182 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: run_start
+2022-11-16 13:16:54,187 DEBUG   HandlerThread:1724037 [system_info.py:__init__():31] System info init
+2022-11-16 13:16:54,188 DEBUG   HandlerThread:1724037 [system_info.py:__init__():46] System info init done
+2022-11-16 13:16:54,188 INFO    HandlerThread:1724037 [system_monitor.py:start():150] Starting system monitor
+2022-11-16 13:16:54,190 INFO    SystemMonitor:1724037 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-11-16 13:16:54,190 INFO    HandlerThread:1724037 [system_monitor.py:probe():168] Collecting system info
+2022-11-16 13:16:54,192 INFO    SystemMonitor:1724037 [interfaces.py:start():168] Started cpu
+2022-11-16 13:16:54,195 INFO    SystemMonitor:1724037 [interfaces.py:start():168] Started disk
+2022-11-16 13:16:54,197 INFO    SystemMonitor:1724037 [interfaces.py:start():168] Started gpu
+2022-11-16 13:16:54,198 INFO    SystemMonitor:1724037 [interfaces.py:start():168] Started memory
+2022-11-16 13:16:54,200 INFO    SystemMonitor:1724037 [interfaces.py:start():168] Started network
+2022-11-16 13:16:54,609 DEBUG   HandlerThread:1724037 [system_info.py:probe():195] Probing system
+2022-11-16 13:16:54,610 DEBUG   HandlerThread:1724037 [system_info.py:_probe_git():180] Probing git
+2022-11-16 13:16:54,643 DEBUG   HandlerThread:1724037 [system_info.py:_probe_git():188] Probing git done
+2022-11-16 13:16:54,643 DEBUG   HandlerThread:1724037 [system_info.py:probe():241] Probing system done
+2022-11-16 13:16:54,645 DEBUG   HandlerThread:1724037 [system_monitor.py:probe():177] {'os': 'Linux-5.4.0-131-generic-x86_64-with-debian-bullseye-sid', 'python': '3.6.10', 'heartbeatAt': '2022-11-16T12:16:54.609631', 'startedAt': '2022-11-16T12:16:46.165205', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://gitlab.lrz.de/ml-lab-ws2223/uncertainty-quantification.git', 'commit': '15ea9daf6097c6e9c7da6fc6d47791b4663de57d'}, 'email': 'ziyue.zhang@tum.de', 'root': '/nfs/homedirs/zhz/uncertainty-quantification', 'host': 'gpu07', 'username': 'zhz', 'executable': '/nfs/homedirs/zhz/anaconda3/envs/posterior-network/bin/python', 'cpu_count': 20, 'cpu_count_logical': 20, 'cpu_freq': {'current': 1375.6634500000002, 'min': 1200.0, 'max': 3100.0}, 'cpu_freq_per_core': [{'current': 1229.014, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.1, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.129, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.136, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.151, 'min': 1200.0, 'max': 3100.0}, {'current': 1409.132, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.057, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.154, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.164, 'min': 1200.0, 'max': 3100.0}, {'current': 1259.714, 'min': 1200.0, 'max': 3100.0}, {'current': 2146.307, 'min': 1200.0, 'max': 3100.0}, {'current': 1658.357, 'min': 1200.0, 'max': 3100.0}, {'current': 1626.127, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.184, 'min': 1200.0, 'max': 3100.0}, {'current': 1460.078, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.184, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.113, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.15, 'min': 1200.0, 'max': 3100.0}, {'current': 1600.266, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.061, 'min': 1200.0, 'max': 3100.0}], 'disk': {'total': 686.3479843139648, 'used': 203.43645858764648}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11721506816}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11721506816}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11721506816}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11721506816}], 'memory': {'total': 251.78673553466797}}
+2022-11-16 13:16:54,647 INFO    HandlerThread:1724037 [system_monitor.py:probe():178] Finished collecting system info
+2022-11-16 13:16:54,650 INFO    HandlerThread:1724037 [system_monitor.py:probe():181] Publishing system info
+2022-11-16 13:16:54,650 DEBUG   HandlerThread:1724037 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-11-16 13:16:54,657 DEBUG   HandlerThread:1724037 [system_info.py:_save_pip():67] Saving pip packages done
+2022-11-16 13:16:54,659 DEBUG   HandlerThread:1724037 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-11-16 13:16:55,044 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/conda-environment.yaml
+2022-11-16 13:16:55,045 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/requirements.txt
+2022-11-16 13:16:55,047 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:16:59,886 DEBUG   HandlerThread:1724037 [system_info.py:_save_conda():86] Saving conda packages done
+2022-11-16 13:16:59,893 INFO    HandlerThread:1724037 [system_monitor.py:probe():183] Finished publishing system info
+2022-11-16 13:16:59,894 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-16 13:16:59,896 DEBUG   SenderThread:1724037 [sender.py:send_request():317] send_request: stop_status
+2022-11-16 13:16:59,898 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:00,045 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/conda-environment.yaml
+2022-11-16 13:17:00,046 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-metadata.json
+2022-11-16 13:17:00,083 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:00,113 DEBUG   SenderThread:1724037 [sender.py:send():303] send: telemetry
+2022-11-16 13:17:00,116 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:00,117 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:00,126 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:00,126 DEBUG   SenderThread:1724037 [sender.py:send():303] send: files
+2022-11-16 13:17:00,128 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-11-16 13:17:00,130 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:00,131 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:00,148 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:00,259 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:00,260 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:00,262 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:00,272 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:00,430 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:00,431 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:00,432 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:00,440 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:00,601 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:00,602 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:00,603 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:00,610 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:00,755 INFO    Thread-52 :1724037 [upload_job.py:push():143] Uploaded file /tmp/tmp478k8z9zwandb/qu2e388g-wandb-metadata.json
+2022-11-16 13:17:01,047 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:01,047 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:01,359 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:01,361 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:01,361 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:01,366 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:01,373 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:01,373 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:01,375 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:01,382 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:02,048 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:02,102 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:02,103 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:02,104 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:02,111 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:02,272 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:02,273 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:02,274 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:02,284 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:02,441 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:02,442 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:02,445 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:02,453 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:02,611 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:02,612 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:02,614 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:02,621 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:02,782 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:02,783 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:02,784 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:02,790 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:03,049 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:03,049 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:03,606 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:03,607 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:03,607 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:03,608 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:03,619 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:03,619 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:03,621 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:03,629 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:03,994 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:03,996 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:03,997 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:04,006 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:04,050 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:04,172 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:04,173 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:04,175 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:04,181 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:04,342 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:04,343 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:04,345 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:04,355 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:04,510 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:04,511 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:04,513 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:04,523 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:04,684 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:04,685 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:04,686 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:04,694 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:05,051 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:05,052 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:05,440 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:05,442 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:05,443 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:05,455 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:05,484 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:05,486 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:05,487 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:05,494 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:05,831 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:05,832 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:05,839 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:05,854 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:06,006 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:06,007 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:06,009 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:06,017 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:06,052 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:06,173 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:06,174 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:06,175 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:06,184 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:06,342 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:06,343 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:06,345 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:06,352 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:06,512 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:06,513 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:06,514 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:06,522 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:07,053 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:07,054 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:07,321 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:07,323 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:07,323 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:07,325 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:07,332 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:07,333 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:07,334 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:07,342 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:07,708 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:07,709 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:07,710 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:07,717 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:07,877 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:07,878 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:07,880 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:07,892 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:08,047 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:08,048 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:08,050 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:08,054 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:08,058 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:08,218 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:08,219 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:08,220 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:08,228 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:08,405 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:08,406 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:08,407 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:08,415 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:09,055 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:09,056 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:09,171 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:09,172 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:09,173 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:09,175 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:09,182 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:09,184 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:09,185 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:09,194 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:09,558 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:09,559 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:09,560 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:09,568 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:09,752 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:09,753 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:09,754 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:09,761 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:09,928 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:09,929 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:09,930 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:09,938 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:10,056 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:10,104 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:10,105 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:10,106 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:10,114 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:10,275 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:10,276 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:10,277 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:10,284 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:11,037 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:11,039 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:11,039 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:11,042 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:11,051 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:11,051 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:11,053 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:11,056 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:11,058 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:11,060 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:11,404 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:11,405 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:11,407 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:11,415 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:11,580 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:11,581 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:11,584 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:11,592 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:11,753 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:11,754 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:11,755 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:11,762 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:11,926 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:11,927 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:11,928 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:11,935 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:12,057 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:12,094 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:12,095 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:12,097 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:12,104 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:12,864 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:12,866 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:12,866 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:12,869 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:12,879 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:12,879 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:12,881 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:12,890 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:13,058 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:13,059 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:13,254 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:13,255 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:13,257 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:13,263 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:13,423 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:13,423 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:13,425 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:13,436 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:13,595 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:13,596 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:13,598 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:13,607 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:13,768 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:13,769 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:13,770 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:13,777 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:13,934 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:13,935 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:13,937 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:13,945 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:14,059 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:14,728 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:14,729 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:14,730 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:14,731 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:14,741 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:14,742 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:14,744 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:14,752 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:15,060 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:15,061 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:15,112 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:15,113 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:15,114 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:15,116 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-16 13:17:15,125 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:15,126 DEBUG   SenderThread:1724037 [sender.py:send_request():317] send_request: stop_status
+2022-11-16 13:17:15,288 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:15,340 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:15,341 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:15,349 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:15,455 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:15,456 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:15,458 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:15,466 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:15,625 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:15,626 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:15,627 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:15,635 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:15,791 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:15,792 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:15,793 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:15,801 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:16,061 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:16,649 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:16,651 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:16,651 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:16,653 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:16,660 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:16,661 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:16,663 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:16,671 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:17,032 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:17,033 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:17,034 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:17,041 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:17,062 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:17,063 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:17,205 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:17,206 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:17,209 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:17,216 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:17,377 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:17,378 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:17,379 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:17,388 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:17,547 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:17,548 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:17,550 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:17,559 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:17,714 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:17,715 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:17,717 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:17,724 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:18,063 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:18,504 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:18,506 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:18,507 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:18,507 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:18,514 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:18,515 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:18,517 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:18,526 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:18,906 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:18,906 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:18,908 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:18,915 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:19,064 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:19,065 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:19,080 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:19,080 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:19,082 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:19,090 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:19,248 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:19,248 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:19,250 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:19,259 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:19,415 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:19,415 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:19,417 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:19,425 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:19,584 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:19,585 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:19,587 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:19,594 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:20,065 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:20,366 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:20,368 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:20,368 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:20,369 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:20,377 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:20,379 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:20,381 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:20,389 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:20,767 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:20,768 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:20,770 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:20,779 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:20,944 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:20,945 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:20,947 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:20,956 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:21,066 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:21,066 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:21,121 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:21,122 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:21,123 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:21,130 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:21,287 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:21,288 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:21,290 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:21,297 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:21,455 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:21,456 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:21,458 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:21,467 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:22,067 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:22,228 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:22,229 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:22,230 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:22,231 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:22,242 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:22,242 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:22,244 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:22,253 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:22,684 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:22,686 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:22,687 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:22,697 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:22,862 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:22,863 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:22,864 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:22,873 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:23,038 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:23,039 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:23,041 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:23,050 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:23,068 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:23,068 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:23,206 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:23,207 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:23,208 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:23,216 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:23,383 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:23,384 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:23,388 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:23,396 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:24,069 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:24,175 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:24,176 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:24,176 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:24,422 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:24,429 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:24,430 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:24,431 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:24,441 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:24,542 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:24,543 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:24,544 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:24,554 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:24,715 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:24,716 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:24,718 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:24,725 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:24,891 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:24,892 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:24,893 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:24,901 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:25,058 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:25,059 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:25,061 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:25,070 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:25,070 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/config.yaml
+2022-11-16 13:17:25,070 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:25,072 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:25,233 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:25,235 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:25,236 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:25,244 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:26,071 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:26,096 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:26,097 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:26,098 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:26,110 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:26,137 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:26,138 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:26,139 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:26,148 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:26,474 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:26,475 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:26,477 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:26,487 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:26,646 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:26,647 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:26,648 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:26,656 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:26,815 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:26,816 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:26,817 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:26,825 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:26,986 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:26,987 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:26,988 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:26,997 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:27,071 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:27,072 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:27,155 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:27,156 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:27,157 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:27,164 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:27,928 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:27,930 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:27,930 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:27,931 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:27,941 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:27,941 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:27,943 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:27,952 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:28,072 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:28,310 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:28,311 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:28,312 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:28,320 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:28,478 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:28,479 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:28,480 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:28,487 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:28,647 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:28,648 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:28,649 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:28,657 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:28,814 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:28,815 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:28,816 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:28,824 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:28,982 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:28,983 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:28,984 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:28,991 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:29,073 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:29,074 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:29,734 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:29,735 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:29,736 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:29,739 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:29,747 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:29,748 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:29,749 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:29,757 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:30,074 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:30,139 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:30,140 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:30,142 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:30,149 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:30,317 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:30,319 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:30,320 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:30,329 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:30,344 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-16 13:17:30,344 DEBUG   SenderThread:1724037 [sender.py:send_request():317] send_request: stop_status
+2022-11-16 13:17:30,492 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:30,624 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:30,625 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:30,633 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:30,668 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:30,669 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:30,670 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:30,679 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:30,847 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:30,848 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:30,849 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:30,857 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:31,075 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:31,076 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:31,682 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:31,683 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:31,684 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:31,686 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:31,696 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:31,696 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:31,698 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:31,706 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:32,076 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:32,131 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:32,132 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:32,134 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:32,142 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:32,307 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:32,308 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:32,309 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:32,318 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:32,477 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:32,478 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:32,480 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:32,489 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:32,649 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:32,650 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:32,652 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:32,662 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:32,818 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:32,819 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:32,820 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:32,827 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:33,077 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:33,078 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:33,632 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:33,633 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:33,633 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:33,636 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:33,643 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:33,644 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:33,646 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:33,652 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:34,025 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:34,026 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:34,027 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:34,035 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:34,078 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:34,197 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:34,198 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:34,199 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:34,206 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:34,363 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:34,364 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:34,366 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:34,374 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:34,535 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:34,536 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:34,538 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:34,546 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:34,703 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:34,704 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:34,705 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:34,714 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:35,079 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:35,080 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:35,483 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:35,484 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:35,485 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:35,488 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:35,498 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:35,499 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:35,500 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:35,508 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:35,913 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:35,914 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:35,915 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:35,922 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:36,080 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:36,087 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:36,088 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:36,089 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:36,096 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:36,264 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:36,266 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:36,267 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:36,274 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:36,445 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:36,446 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:36,447 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:36,454 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:36,625 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:36,626 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:36,628 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:36,634 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:37,081 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:37,082 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:37,509 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:37,510 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:37,510 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:37,513 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:37,520 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:37,522 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:37,523 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:37,530 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:37,913 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:37,914 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:37,916 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:37,924 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:38,082 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:38,090 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:38,091 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:38,092 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:38,100 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:38,269 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:38,270 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:38,271 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:38,280 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:38,442 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:38,443 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:38,446 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:38,453 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:38,613 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:38,614 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:38,616 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:38,623 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:39,083 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:39,084 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:39,383 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:39,384 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:39,385 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:39,386 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:39,395 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:39,395 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:39,397 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:39,403 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:39,809 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:39,810 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:39,811 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:39,819 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:39,983 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:39,984 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:39,986 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:39,994 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:40,084 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:40,159 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:40,160 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:40,161 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:40,172 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:40,330 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:40,331 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:40,333 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:40,339 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:40,500 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:40,501 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:40,503 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:40,512 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:41,085 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:41,086 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:41,311 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:41,313 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:41,313 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:41,315 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:41,324 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:41,325 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:41,326 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:41,334 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:41,681 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:41,682 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:41,683 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:41,691 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:41,855 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:41,856 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:41,858 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:41,868 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:42,031 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:42,032 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:42,034 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:42,042 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:42,086 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:42,207 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:42,208 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:42,210 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:42,219 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:42,375 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:42,376 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:42,378 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:42,386 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:43,088 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:43,088 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:43,167 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:43,168 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:43,168 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:43,171 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:43,179 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:43,180 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:43,182 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:43,189 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:43,554 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:43,555 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:43,556 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:43,565 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:43,729 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:43,730 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:43,732 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:43,739 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:43,901 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:43,902 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:43,903 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:43,912 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:44,072 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:44,073 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:44,074 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:44,082 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:44,088 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:44,248 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:44,249 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:44,253 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:44,262 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:45,033 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:45,035 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:45,035 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:45,038 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:45,045 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:45,046 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:45,048 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:45,055 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:45,089 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:45,090 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:45,439 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:45,440 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:45,442 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:45,449 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:45,616 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:45,617 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:45,618 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:45,627 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:45,628 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-16 13:17:45,629 DEBUG   SenderThread:1724037 [sender.py:send_request():317] send_request: stop_status
+2022-11-16 13:17:45,792 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:45,840 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:45,842 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:45,848 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:45,965 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:45,966 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:45,967 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:45,975 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:46,090 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:46,133 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:46,134 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:46,135 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:46,142 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:46,923 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:46,925 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:46,925 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:46,928 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:46,939 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:46,939 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:46,941 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:46,947 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:47,091 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:47,092 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:47,309 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:47,310 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:47,311 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:47,322 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:47,484 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:47,485 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:47,487 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:47,495 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:47,660 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:47,661 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:47,663 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:47,671 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:47,830 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:47,831 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:47,833 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:47,845 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:48,004 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:48,005 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:48,006 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:48,017 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:48,093 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:48,819 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:48,821 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:48,821 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:48,827 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:48,843 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:48,843 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:48,845 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:48,851 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:49,094 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:49,094 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:49,229 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:49,230 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:49,231 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:49,239 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:49,409 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:49,410 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:49,412 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:49,419 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:49,581 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:49,582 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:49,584 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:49,592 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:49,751 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:49,752 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:49,753 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:49,762 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:49,924 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:49,925 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:49,928 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:49,939 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:50,095 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:50,831 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:50,833 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:50,833 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:50,834 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:50,844 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:50,845 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:50,847 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:50,854 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:51,096 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:51,096 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:51,199 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:51,200 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:51,202 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:51,212 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:51,366 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:51,367 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:51,369 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:51,377 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:51,541 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:51,542 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:51,544 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:51,552 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:51,710 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:51,711 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:51,713 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:51,719 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:51,882 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:51,883 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:51,885 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:51,892 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:52,097 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:52,684 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:52,685 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:52,685 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:52,688 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:52,697 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:52,697 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:52,699 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:52,707 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:53,097 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:53,098 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:53,101 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:53,103 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:53,104 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:53,113 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:53,280 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:53,281 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:53,282 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:53,290 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:53,450 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:53,451 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:53,452 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:53,462 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:53,623 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:53,624 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:53,625 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:53,633 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:53,794 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:53,795 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:53,797 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:53,803 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:54,098 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:54,202 DEBUG   SystemMonitor:1724037 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-11-16 13:17:54,205 DEBUG   SenderThread:1724037 [sender.py:send():303] send: stats
+2022-11-16 13:17:54,615 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:54,615 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:54,616 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:54,619 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:54,627 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:54,628 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:54,629 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:54,637 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:55,001 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:55,002 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:55,004 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:55,012 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:55,099 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:55,100 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:55,179 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:55,180 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:55,182 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:55,190 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:55,356 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:55,358 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:55,359 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:55,369 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:55,527 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:55,528 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:55,529 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:55,536 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:55,698 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:55,699 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:55,700 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:55,709 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:56,101 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:56,529 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:56,530 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:56,531 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:56,534 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:56,544 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:56,545 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:56,548 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:56,556 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:56,906 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:56,908 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:56,909 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:56,918 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:57,076 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:57,077 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:57,079 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:57,087 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:57,102 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:17:57,103 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:57,248 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:57,249 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:57,251 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:57,258 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:57,419 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:57,420 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:57,421 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:57,429 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:57,590 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-16 13:17:57,591 DEBUG   SenderThread:1724037 [sender.py:send():303] send: history
+2022-11-16 13:17:57,593 DEBUG   SenderThread:1724037 [sender.py:send():303] send: summary
+2022-11-16 13:17:57,600 INFO    SenderThread:1724037 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-16 13:17:57,986 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:57,986 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:57,986 INFO    HandlerThread:1724037 [system_monitor.py:finish():160] Stopping system monitor
+2022-11-16 13:17:57,988 DEBUG   SystemMonitor:1724037 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-11-16 13:17:57,989 DEBUG   SystemMonitor:1724037 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-11-16 13:17:57,989 INFO    HandlerThread:1724037 [interfaces.py:finish():173] Joined cpu
+2022-11-16 13:17:57,993 INFO    HandlerThread:1724037 [interfaces.py:finish():173] Joined disk
+2022-11-16 13:17:58,103 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/wandb-summary.json
+2022-11-16 13:17:58,301 INFO    HandlerThread:1724037 [interfaces.py:finish():173] Joined gpu
+2022-11-16 13:17:58,301 INFO    HandlerThread:1724037 [interfaces.py:finish():173] Joined memory
+2022-11-16 13:17:58,303 INFO    HandlerThread:1724037 [interfaces.py:finish():173] Joined network
+2022-11-16 13:17:58,305 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,305 DEBUG   SenderThread:1724037 [sender.py:send():303] send: stats
+2022-11-16 13:17:58,307 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,309 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,310 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,312 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,314 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,315 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,315 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,315 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,315 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,316 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,317 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,319 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,321 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,324 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,325 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,327 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,329 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,330 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,331 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,333 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,335 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,338 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,339 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,341 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,342 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,344 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,344 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,346 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,348 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,349 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,350 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,351 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,352 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,355 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,356 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,358 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,359 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,362 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,363 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:58,365 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: resume
+2022-11-16 13:17:58,366 INFO    HandlerThread:1724037 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-11-16 13:17:58,369 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: pause
+2022-11-16 13:17:58,369 INFO    HandlerThread:1724037 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-16 13:17:59,104 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log
+2022-11-16 13:18:00,844 DEBUG   HandlerThread:1724037 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-16 13:18:00,845 DEBUG   SenderThread:1724037 [sender.py:send_request():317] send_request: stop_status
+2022-11-16 13:18:01,106 INFO    Thread-49 :1724037 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221116_131646-13xglwbz/files/output.log

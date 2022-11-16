@@ -1,0 +1,1 @@
+{"Train loss": "UCE", "_timestamp": 1668549978.7003138, "_runtime": 671.4772067070007, "_step": 2399, "Val loss": 1.8333512509279977, "Val accuracy": 0.3499999940395355, "_wandb": {"runtime": 670}}

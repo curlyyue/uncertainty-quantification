@@ -1,0 +1,65 @@
+2022-11-15 17:06:47,429 INFO    StreamThr :1648528 [internal.py:wandb_internal():91] W&B internal server running at pid: 1648528, started at: 2022-11-15 17:06:47.426820
+2022-11-15 17:06:47,432 DEBUG   HandlerThread:1648528 [handler.py:handle_request():139] handle_request: status
+2022-11-15 17:06:47,435 DEBUG   SenderThread:1648528 [sender.py:send_request():317] send_request: status
+2022-11-15 17:06:47,457 DEBUG   SenderThread:1648528 [sender.py:send():303] send: header
+2022-11-15 17:06:47,457 INFO    WriterThread:1648528 [datastore.py:open_for_write():75] open: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/run-7ai301xk.wandb
+2022-11-15 17:06:47,484 DEBUG   SenderThread:1648528 [sender.py:send():303] send: run
+2022-11-15 17:06:47,974 INFO    SenderThread:1648528 [dir_watcher.py:__init__():216] watching files in: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files
+2022-11-15 17:06:47,974 INFO    SenderThread:1648528 [sender.py:_start_run_threads():931] run started: 7ai301xk with start time 1668528407.427909
+2022-11-15 17:06:47,976 DEBUG   SenderThread:1648528 [sender.py:send():303] send: summary
+2022-11-15 17:06:47,984 DEBUG   HandlerThread:1648528 [handler.py:handle_request():139] handle_request: check_version
+2022-11-15 17:06:47,984 INFO    SenderThread:1648528 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-15 17:06:47,985 DEBUG   SenderThread:1648528 [sender.py:send_request():317] send_request: check_version
+2022-11-15 17:06:48,115 DEBUG   HandlerThread:1648528 [handler.py:handle_request():139] handle_request: run_start
+2022-11-15 17:06:48,125 DEBUG   HandlerThread:1648528 [system_info.py:__init__():31] System info init
+2022-11-15 17:06:48,126 DEBUG   HandlerThread:1648528 [system_info.py:__init__():46] System info init done
+2022-11-15 17:06:48,127 INFO    HandlerThread:1648528 [system_monitor.py:start():150] Starting system monitor
+2022-11-15 17:06:48,127 INFO    SystemMonitor:1648528 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-11-15 17:06:48,128 INFO    HandlerThread:1648528 [system_monitor.py:probe():168] Collecting system info
+2022-11-15 17:06:48,129 INFO    SystemMonitor:1648528 [interfaces.py:start():168] Started cpu
+2022-11-15 17:06:48,133 INFO    SystemMonitor:1648528 [interfaces.py:start():168] Started disk
+2022-11-15 17:06:48,135 INFO    SystemMonitor:1648528 [interfaces.py:start():168] Started gpu
+2022-11-15 17:06:48,136 INFO    SystemMonitor:1648528 [interfaces.py:start():168] Started memory
+2022-11-15 17:06:48,138 INFO    SystemMonitor:1648528 [interfaces.py:start():168] Started network
+2022-11-15 17:06:48,159 DEBUG   HandlerThread:1648528 [system_info.py:probe():195] Probing system
+2022-11-15 17:06:48,160 DEBUG   HandlerThread:1648528 [system_info.py:_probe_git():180] Probing git
+2022-11-15 17:06:48,184 DEBUG   HandlerThread:1648528 [system_info.py:_probe_git():188] Probing git done
+2022-11-15 17:06:48,185 DEBUG   HandlerThread:1648528 [system_info.py:probe():241] Probing system done
+2022-11-15 17:06:48,187 DEBUG   HandlerThread:1648528 [system_monitor.py:probe():177] {'os': 'Linux-5.4.0-131-generic-x86_64-with-debian-bullseye-sid', 'python': '3.6.10', 'heartbeatAt': '2022-11-15T16:06:48.159668', 'startedAt': '2022-11-15T16:06:47.356480', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://gitlab.lrz.de/ml-lab-ws2223/uncertainty-quantification.git', 'commit': '15ea9daf6097c6e9c7da6fc6d47791b4663de57d'}, 'email': 'ziyue.zhang@tum.de', 'root': '/nfs/homedirs/zhz/uncertainty-quantification', 'host': 'gpu07', 'username': 'zhz', 'executable': '/nfs/homedirs/zhz/anaconda3/envs/posterior-network/bin/python', 'cpu_count': 20, 'cpu_count_logical': 20, 'cpu_freq': {'current': 1552.75845, 'min': 1200.0, 'max': 3100.0}, 'cpu_freq_per_core': [{'current': 2100.079, 'min': 1200.0, 'max': 3100.0}, {'current': 1400.518, 'min': 1200.0, 'max': 3100.0}, {'current': 1404.544, 'min': 1200.0, 'max': 3100.0}, {'current': 1298.831, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.042, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.101, 'min': 1200.0, 'max': 3100.0}, {'current': 2200.064, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.074, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.473, 'min': 1200.0, 'max': 3100.0}, {'current': 1699.558, 'min': 1200.0, 'max': 3100.0}, {'current': 2651.052, 'min': 1200.0, 'max': 3100.0}, {'current': 2200.064, 'min': 1200.0, 'max': 3100.0}, {'current': 1510.368, 'min': 1200.0, 'max': 3100.0}, {'current': 1466.853, 'min': 1200.0, 'max': 3100.0}, {'current': 1395.005, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.082, 'min': 1200.0, 'max': 3100.0}, {'current': 1252.938, 'min': 1200.0, 'max': 3100.0}, {'current': 1200.13, 'min': 1200.0, 'max': 3100.0}, {'current': 1564.166, 'min': 1200.0, 'max': 3100.0}, {'current': 1906.072, 'min': 1200.0, 'max': 3100.0}], 'disk': {'total': 686.3479843139648, 'used': 199.51566696166992}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11721506816}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11721506816}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11721506816}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11721506816}], 'memory': {'total': 251.78673553466797}}
+2022-11-15 17:06:48,188 INFO    HandlerThread:1648528 [system_monitor.py:probe():178] Finished collecting system info
+2022-11-15 17:06:48,188 INFO    HandlerThread:1648528 [system_monitor.py:probe():181] Publishing system info
+2022-11-15 17:06:48,190 DEBUG   HandlerThread:1648528 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-11-15 17:06:48,198 DEBUG   HandlerThread:1648528 [system_info.py:_save_pip():67] Saving pip packages done
+2022-11-15 17:06:48,199 DEBUG   HandlerThread:1648528 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-11-15 17:06:48,980 INFO    Thread-13 :1648528 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files/wandb-summary.json
+2022-11-15 17:06:48,981 INFO    Thread-13 :1648528 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files/requirements.txt
+2022-11-15 17:06:48,983 INFO    Thread-13 :1648528 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files/conda-environment.yaml
+2022-11-15 17:06:51,123 DEBUG   HandlerThread:1648528 [system_info.py:_save_conda():86] Saving conda packages done
+2022-11-15 17:06:51,131 INFO    HandlerThread:1648528 [system_monitor.py:probe():183] Finished publishing system info
+2022-11-15 17:06:51,141 DEBUG   SenderThread:1648528 [sender.py:send():303] send: files
+2022-11-15 17:06:51,141 INFO    SenderThread:1648528 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-11-15 17:06:51,165 DEBUG   HandlerThread:1648528 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-15 17:06:51,165 DEBUG   SenderThread:1648528 [sender.py:send_request():317] send_request: stop_status
+2022-11-15 17:06:51,381 DEBUG   SenderThread:1648528 [sender.py:send():303] send: telemetry
+2022-11-15 17:06:51,749 INFO    Thread-16 :1648528 [upload_job.py:push():143] Uploaded file /tmp/tmpq97nnj3swandb/250whxbx-wandb-metadata.json
+2022-11-15 17:06:51,978 INFO    Thread-13 :1648528 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files/conda-environment.yaml
+2022-11-15 17:06:51,979 INFO    Thread-13 :1648528 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files/output.log
+2022-11-15 17:06:51,981 INFO    Thread-13 :1648528 [dir_watcher.py:_on_file_created():275] file/dir created: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files/wandb-metadata.json
+2022-11-15 17:06:53,643 DEBUG   HandlerThread:1648528 [handler.py:handle_request():139] handle_request: pause
+2022-11-15 17:06:53,643 INFO    HandlerThread:1648528 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-11-15 17:06:53,643 INFO    HandlerThread:1648528 [system_monitor.py:finish():160] Stopping system monitor
+2022-11-15 17:06:53,644 DEBUG   SystemMonitor:1648528 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-11-15 17:06:53,645 INFO    HandlerThread:1648528 [interfaces.py:finish():173] Joined cpu
+2022-11-15 17:06:53,645 DEBUG   SystemMonitor:1648528 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-11-15 17:06:53,646 INFO    HandlerThread:1648528 [interfaces.py:finish():173] Joined disk
+2022-11-15 17:06:53,646 DEBUG   SystemMonitor:1648528 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-11-15 17:06:53,980 INFO    Thread-13 :1648528 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files/output.log
+2022-11-15 17:06:54,009 INFO    HandlerThread:1648528 [interfaces.py:finish():173] Joined gpu
+2022-11-15 17:06:54,009 INFO    HandlerThread:1648528 [interfaces.py:finish():173] Joined memory
+2022-11-15 17:06:54,011 INFO    HandlerThread:1648528 [interfaces.py:finish():173] Joined network
+2022-11-15 17:06:54,013 DEBUG   SenderThread:1648528 [sender.py:send():303] send: stats
+2022-11-15 17:07:06,384 DEBUG   HandlerThread:1648528 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-15 17:07:06,385 DEBUG   SenderThread:1648528 [sender.py:send_request():317] send_request: stop_status
+2022-11-15 17:07:19,007 INFO    Thread-13 :1648528 [dir_watcher.py:_on_file_modified():292] file/dir modified: /nfs/homedirs/zhz/uncertainty-quantification/src/posterior_networks/wandb/run-20221115_170647-7ai301xk/files/config.yaml
+2022-11-15 17:07:21,598 DEBUG   HandlerThread:1648528 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-15 17:07:21,599 DEBUG   SenderThread:1648528 [sender.py:send_request():317] send_request: stop_status

@@ -1,0 +1,156 @@
+{
+    "os": "Linux-5.4.0-131-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.6.10",
+    "heartbeatAt": "2022-11-16T12:16:54.609631",
+    "startedAt": "2022-11-16T12:16:46.165205",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://gitlab.lrz.de/ml-lab-ws2223/uncertainty-quantification.git",
+        "commit": "15ea9daf6097c6e9c7da6fc6d47791b4663de57d"
+    },
+    "email": "ziyue.zhang@tum.de",
+    "root": "/nfs/homedirs/zhz/uncertainty-quantification",
+    "host": "gpu07",
+    "username": "zhz",
+    "executable": "/nfs/homedirs/zhz/anaconda3/envs/posterior-network/bin/python",
+    "cpu_count": 20,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 1375.6634500000002,
+        "min": 1200.0,
+        "max": 3100.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1229.014,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.1,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.129,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.136,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.151,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1409.132,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.057,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.154,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.164,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1259.714,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 2146.307,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1658.357,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1626.127,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.184,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1460.078,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.184,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.113,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.15,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1600.266,
+            "min": 1200.0,
+            "max": 3100.0
+        },
+        {
+            "current": 1200.061,
+            "min": 1200.0,
+            "max": 3100.0
+        }
+    ],
+    "disk": {
+        "total": 686.3479843139648,
+        "used": 203.43645858764648
+    },
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 4,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11721506816
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11721506816
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11721506816
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11721506816
+        }
+    ],
+    "memory": {
+        "total": 251.78673553466797
+    }
+}

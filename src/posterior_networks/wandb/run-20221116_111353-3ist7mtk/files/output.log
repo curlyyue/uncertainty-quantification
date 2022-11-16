@@ -1,0 +1,9 @@
+<torch.utils.data.dataloader.DataLoader object at 0x7f2d82154f28>
+Datasets and Dataloaders created
+Training starts
+../../src/posterior_networks/PosteriorNetwork.py:166: UserWarning: Anomaly Detection has been enabled. This mode will increase the runtime and should only be enabled for debugging.
+  with autograd.detect_anomaly():
+{"config": "dict", "os": "module", "run": "function", "sys": "module"}
+{"shape": "", "count": 25, "type": "dict"}
+{"config": "dict", "os": "module", "run": "function", "sys": "module"}
+{"shape": "", "count": 25, "type": "dict"}

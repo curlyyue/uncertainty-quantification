@@ -10,7 +10,7 @@ class MapillaryDataset(Dataset):
                 img_dir,
                 transform=None, 
                 target_transform=None):
-        self.img_labels = img_labels
+        self.img_labels = img_labels.iloc[:10]
         self.img_dir = img_dir
         self.transform = transform
         self.target_transform = target_transform
@@ -29,8 +29,8 @@ class MapillaryDataset(Dataset):
         # image = image.permute(2, 0, 1)
         image = torchvision.transforms.functional.resize(image, [32, 32])
         label = self.img_labels.iloc[idx, -1]
- 
+
         # if self.target_transform:
-        #     label = self.target_transform(label)
+            # label = self.target_transform(label)
         return image, torch.tensor([label])
 

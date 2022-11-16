@@ -1,0 +1,19 @@
+Datasets and Dataloaders created
+Training starts
+/nfs/homedirs/zhz/anaconda3/envs/posterior-network/bin/python
+Collecting torchvision
+  Downloading torchvision-0.11.2-cp36-cp36m-manylinux1_x86_64.whl (23.3 MB)
+     |████████████████████████████████| 23.3 MB 4.8 MB/s
+[?25hRequirement already satisfied, skipping upgrade: pillow!=8.3.0,>=5.3.0 in /nfs/homedirs/zhz/anaconda3/envs/posterior-network/lib/python3.6/site-packages (from torchvision) (7.1.2)
+Collecting torch==1.10.1
+  Downloading torch-1.10.1-cp36-cp36m-manylinux1_x86_64.whl (881.9 MB)
+     |████████████████████████████████| 881.9 MB 4.9 kB/s
+[?25hRequirement already satisfied, skipping upgrade: numpy in /nfs/homedirs/zhz/anaconda3/envs/posterior-network/lib/python3.6/site-packages (from torchvision) (1.18.1)
+Collecting dataclasses; python_version < "3.7"
+  Downloading dataclasses-0.8-py3-none-any.whl (19 kB)
+Requirement already satisfied, skipping upgrade: typing-extensions in /nfs/homedirs/zhz/anaconda3/envs/posterior-network/lib/python3.6/site-packages (from torch==1.10.1->torchvision) (4.1.1)
+Installing collected packages: dataclasses, torch, torchvision
+  Attempting uninstall: torch
+    Found existing installation: torch 1.5.0
+    Uninstalling torch-1.5.0:
+      Successfully uninstalled torch-1.5.0

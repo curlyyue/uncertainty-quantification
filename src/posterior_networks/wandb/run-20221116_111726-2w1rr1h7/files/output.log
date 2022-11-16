@@ -1,0 +1,57 @@
+<torch.utils.data.dataloader.DataLoader object at 0x7f3ddcbee6d8>
+Datasets and Dataloaders created
+Training starts
+../../src/posterior_networks/PosteriorNetwork.py:166: UserWarning: Anomaly Detection has been enabled. This mode will increase the runtime and should only be enabled for debugging.
+  with autograd.detect_anomaly():
+Epoch 0 -> Val loss 1.833 | Val Acc.: 0.2
+Model saved
+Epoch 1 -> Val loss 1.833 | Val Acc.: 0.2
+Epoch 2 -> Val loss 1.833 | Val Acc.: 0.2
+Epoch 3 -> Val loss 1.833 | Val Acc.: 0.2
+Epoch 4 -> Val loss 1.833 | Val Acc.: 0.2
+Epoch 5 -> Val loss 1.833 | Val Acc.: 0.2
+Epoch 6 -> Val loss 1.833 | Val Acc.: 0.2
+Epoch 7 -> Val loss 1.833 | Val Acc.: 0.1
+Epoch 8 -> Val loss 1.833 | Val Acc.: 0.3
+Epoch 9 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 10 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 11 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 12 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 13 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 14 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 15 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 16 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 17 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 18 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 19 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 20 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 21 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 22 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 23 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 24 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 25 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 26 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 27 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 28 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 29 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 30 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 31 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 32 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 33 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 34 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 35 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 36 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 37 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 38 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 39 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 40 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 41 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 42 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 43 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 44 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 45 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 46 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 47 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 48 -> Val loss 1.833 | Val Acc.: 0.4
+Epoch 49 -> Val loss 1.833 | Val Acc.: 0.4
+{'accuracy': array(0.1), 'confidence_aleatoric': 0.1111111111111111, 'confidence_epistemic': 0.1111111111111111, 'brier_score': array(0.8660254)}

@@ -1,0 +1,4 @@
+
+Datasets and Dataloaders created
+Training starts
+../../src/posterior_networks/PosteriorNetwork.py:166: UserWarning: Anomaly Detection has been enabled. This mode will increase the runtime and should only be enabled for debugging.

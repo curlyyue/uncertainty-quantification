@@ -2,7 +2,7 @@ config = dict(
 seed = 1,  # Seed for training
 dataset_path='/lab/project-1/',
 train_csv='/lab/project-1/train_label.csv',
-val_csv='/lab/project-1/test_label.csv', 
+val_csv='/lab/project-1/val_label.csv', 
 test_csv='/lab/project-1/test_label.csv',
 # dataset_name,  # Dataset name. string
 ood_regions=['g6'],  # OOD dataset regions (g1-g6).  list of strings
@@ -26,7 +26,7 @@ budget_function='id',  # Budget function name applied on class count. name
 
 # Training parameters
 save_dir = 'models/exp',  # Path to save resutls. string
-max_epochs=200,  # Maximum number of epochs for training
+max_epochs=20,  # Maximum number of epochs for training 
 patience=5,  # Patience for early stopping. int
 # frequency,  # Frequency for early stopping test. int
 batch_size=2,  # Batch size. int
