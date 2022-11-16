@@ -30,7 +30,7 @@ def compute_loss_accuracy(model, loader, device):
 def train(model, train_loader, val_loader, config):
     device = config['device']
     model.train()
-    #train_losses, val_losses, train_accuracies, val_accuracies = [], [], [], []
+    train_losses, val_losses, train_accuracies, val_accuracies = [], [], [], []
     best_val_loss = float("Inf")
     print('Training starts')
     for epoch in range(config['max_epochs']):
@@ -43,9 +43,10 @@ def train(model, train_loader, val_loader, config):
             wandb.log({"Train loss": model.loss})
 
         # Stats on data sets
-        # train_loss, train_accuracy = compute_loss_accuracy(model, train_loader)
-        # train_losses.append(round(train_loss, 3))
-        # train_accuracies.append(round(train_accuracy, 3))
+        train_loss, train_accuracy = compute_loss_accuracy(model, train_loader, device)
+        train_losses.append(round(train_loss, 3))
+        train_accuracies.append(round(train_accuracy, 3))
+
         val_loss, val_accuracy = compute_loss_accuracy(model, val_loader, config['device'])
         wandb.log({"Val loss": val_loss})
         wandb.log({"Val accuracy": val_accuracy})
@@ -74,7 +75,7 @@ def train(model, train_loader, val_loader, config):
         #     print('Early Stopping.')
         #     break
 
-    return #train_losses, val_losses, train_accuracies, val_accuracies
+    return train_losses, val_losses, train_accuracies, val_accuracies
 
 
 # Joint training method for ablated model
