@@ -1,6 +1,6 @@
 config = dict(
 seed = 1,  # Seed for training
-dataset_path='/lab/project-1/',
+wb_project = 'test-project', #'clean_runs',
 train_csv='/lab/project-1/train_label.csv',
 val_csv='/lab/project-1/val_label.csv', 
 test_csv='/lab/project-1/test_label.csv',
@@ -24,13 +24,13 @@ budget_function='id',  # Budget function name applied on class count. name
 save_dir = 'models/second_run',  # Path to save resutls. string
 max_epochs=10,  # Maximum number of epochs for training 
 patience=5,  # Patience for early stopping. int
-batch_size=512,  # Batch size. int
+batch_size=64,  # Batch size. int
 lr=0.0001,  # Learning rate. float
 loss='UCE',  # Loss name. string
 training_mode='joint',  # 'joint' or 'sequential' training. string
 regr=1e-5, # Regularization factor in Bayesian loss. float
 
-WANDB_KEY = "ca13bbfeb8b55c13cc7a761af71fd11b88c907bf" 
+# WANDB_KEY = "ca13bbfeb8b55c13cc7a761af71fd11b88c907bf" 
 
 )
 

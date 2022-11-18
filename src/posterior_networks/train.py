@@ -41,15 +41,17 @@ def train(model, train_loader, val_loader, config):
             X_train, Y_train_hot = X_train.to(device), Y_train_hot.to(device)
             model(X_train, Y_train_hot)
             model.step()
-            wandb.log({"Train loss": model.loss})
+            # loss = model.grad_loss.cpu().item()
+            # wandb.log({"Train loss": model.grad_loss.cpu().item()})
+            # wandb.log({"Train loss": loss})
+            # print(type(loss), loss)
 
         # Stats on data sets
         train_loss, train_accuracy = compute_loss_accuracy(model, train_loader, device)
-        wandb.log({"Train Accuracy": train_accuracy})
-
         val_loss, val_accuracy = compute_loss_accuracy(model, val_loader, device)
-        wandb.log({"Val loss": val_loss})
-        wandb.log({"Val accuracy": val_accuracy})
+        wandb.log({"Val loss": val_loss, "Train loss": train_loss, 'epoch': epoch})
+        wandb.log({"Val accuracy": val_accuracy, 'epoch': epoch,
+                   "Train Accuracy": train_accuracy})
 
         print("Epoch {} -> Val loss {} | Val Acc.: {}".format(epoch, round(val_loss, 3), round(val_accuracy, 3)))
 
