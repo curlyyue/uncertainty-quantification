@@ -12,8 +12,11 @@ import wandb
 import numpy as np
 
 # to do
+<<<<<<< HEAD
 # logic for ood evaluation and test() - Grigor
 # add ood by class
+=======
+>>>>>>> 47fba3f738ede118c4543b30c2ec82e288ac8e23
 # augmentations?
 # resize problem in dataset
 # check N
@@ -33,11 +36,6 @@ def run(config):
     torch.cuda.manual_seed_all(config['seed'])
 
     os.makedirs(config['save_dir'], exist_ok=True)
-    with open(os.path.join(config['save_dir'], 'config.json'), 'w') as f:
-        json.dump(config, f)
-
-    wandb.init(project="test-project", entity="uncertainty_tum")
-    wandb.config = config
 
     use_cuda = torch.cuda.is_available()
     config['device'] = "cuda" if use_cuda else "cpu"
@@ -45,13 +43,17 @@ def run(config):
     ##################
     ## Load dataset ##
     ##################
-
-    train_dataloader, ood_train_dataloader = split_id_ood(config, split='train')
-    val_dataloader, ood_val_dataloader = split_id_ood(config, split='val')
-    test_dataloader, ood_test_dataloader = split_id_ood(config, split='test')
+    (train_dataloader, 
+     val_dataloader, 
+     test_dataloader, 
+     ood_test_dataloader, 
+     ood_dataloader
+    ) = split_id_ood(config)
     N = train_dataloader.dataset.N
     print("Datasets and Dataloaders created")
 
+    wandb.init(project=config["wb_project"], entity="uncertainty_tum", 
+                  config=config)
     #################
     ## Train model ##
     #################
@@ -69,6 +71,7 @@ def run(config):
                              batch_size=config['batch_size'],
                              lr=config['lr'],
                              loss=config['loss'],
+                             dropout=config['dropout'],
                              regr=config['regr'],
                              seed=config['seed'])
 
@@ -106,13 +109,19 @@ def run(config):
             #                                 seed=None)
             # ood_dataset_loaders[ood_dataset_name + '_unscaled'] = torch.utils.data.DataLoader(dataset, batch_size=2 * batch_size, num_workers=4, pin_memory=True)
     ood_dataset_loaders = {}
-    ood_dataset_loaders['test'] = ood_test_dataloader
+    ood_dataset_loaders['Test OOD'] = ood_test_dataloader
+    ood_dataset_loaders['Combined OOD'] = ood_dataloader
     result_path = os.path.join(config['save_dir'], 'best_model.pth')
     model.load_state_dict(torch.load(f'{result_path}')['model_state_dict'])
     metrics = test(model, test_dataloader, ood_dataset_loaders, result_path)
-    print(metrics)
+    
+    config['metrics'] = metrics
+    with open(os.path.join(config['save_dir'], 'config.json'), 'w') as f:
+        json.dump(config, f)
 
-    wandb.finish()
+    for k,v in metrics.items():
+        print(k, round(v, 3))
 
+    wandb.finish(quiet=True)
 
     return {**metrics}

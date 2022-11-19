@@ -9,7 +9,7 @@ from sklearn import metrics
 def accuracy(Y, alpha):
     corrects = (Y.squeeze() == alpha.max(-1)[1]).type(torch.DoubleTensor)
     accuracy = corrects.sum() / corrects.size(0)
-    return accuracy.cpu().detach().numpy()
+    return accuracy.cpu().detach().item()
 
 
 def confidence(Y, alpha, score_type='AUROC', uncertainty_type='aleatoric'):
@@ -36,7 +36,7 @@ def brier_score(Y, alpha):
     indices = torch.arange(batch_size)
     p[indices, Y.squeeze()] -= 1
     brier_score = p.norm(dim=-1).mean().cpu().detach().numpy()
-    return brier_score
+    return brier_score.item()
 
 
 # OOD detection metrics
