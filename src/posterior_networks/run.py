@@ -12,15 +12,14 @@ import wandb
 import numpy as np
 
 # to do
-# logic for ood evaluation and test() - ???
-
+# logic for ood evaluation and test() - Grigor
+# add ood by class
 # augmentations?
 # resize problem in dataset
 # check N
 # check k_lipschitz
 # check unscaled_ood
 
-# how was img read done? RGB BGR?
 
 def run(config): 
 

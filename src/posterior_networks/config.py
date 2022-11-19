@@ -38,4 +38,5 @@ pretrained_info = dict(
     resnet18={'weights': "IMAGENET1K_V1", 'hidden_dim': 512},
     resnet50={'weights': "IMAGENET1K_V2", 'hidden_dim': 2048},
     efficientnetv2={'weights': "IMAGENET1K_V1", 'hidden_dim': 1280}
+
 )

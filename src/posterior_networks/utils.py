@@ -13,14 +13,33 @@ def split_id_ood(config, split='train'):
     ood_data = data_labels[data_labels.region.isin(config['ood_regions'])]
     
     transform = transforms.Compose([transforms.ToTensor(),
+        # data augmentation
+        # transforms.GaussianBlur(kernel_size=(5,9), sigma=(0.1,2)),
+        # transforms.ColorJitter(brightness=0.5, hue=0.2),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
                                     ])
+    
     id_dataset = MapillaryDataset(id_data, 
                                 os.path.join(config['dataset_path'], f'{split}_signs'),
                                 transform=transform)
     ood_dataset = MapillaryDataset(ood_data, 
                                 os.path.join(config['dataset_path'], f'{split}_signs'),
                                 transform=transform)
+    # if split == 'train':
+    #     id_dataset = MapillaryDataset(id_data, 
+    #                             os.path.join(config['dataset_path'], f'{split}_signs'),
+    #                             transform=transform)
+    #     ood_dataset = MapillaryDataset(ood_data, 
+    #                             os.path.join(config['dataset_path'], f'{split}_signs'),
+    #                             transform=transform)
+    # else:
+    #     id_dataset = MapillaryDataset(id_data, 
+    #                             os.path.join(config['dataset_path'], f'{split}_signs'),
+    #                             transform=None)
+    #     ood_dataset = MapillaryDataset(ood_data, 
+    #                             os.path.join(config['dataset_path'], f'{split}_signs'),
+    #                             transform=None)
+
     config['num_classes'] = id_data.label.nunique()
 
     id_dataloader = torch.utils.data.DataLoader(id_dataset, batch_size=config['batch_size'],
