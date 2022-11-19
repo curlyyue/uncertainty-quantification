@@ -1,6 +1,7 @@
 config = dict(
 seed = 1,  # Seed for training
-wb_project = 'test-project', #'clean_runs',
+# wb_project = 'clean_runs', #'clean_runs' test-project,
+wb_project = 'test-project', #'clean_runs' test-project,
 train_csv='/lab/project-1/train_label.csv',
 val_csv='/lab/project-1/val_label.csv', 
 test_csv='/lab/project-1/test_label.csv',
@@ -13,6 +14,7 @@ ood_regions='g6',  # OOD dataset regions (g1-g6). should be separated by , like 
 architecture = 'resnet18',  # Encoder architecture name, should be from pretrained_info. string
 hidden_dims=[64, 64, 64],  # Hidden dimensions. list of ints
 # kernel_dim,  # Input dimension. int
+dropout=0.1,
 latent_dim=32,  # Latent dimension. int
 no_density=False,  # Use density estimation or not. boolean
 density_type='batched_radial_flow',  # Density type. string
@@ -37,5 +39,6 @@ regr=1e-5, # Regularization factor in Bayesian loss. float
 pretrained_info = dict(
     resnet18={'weights': "IMAGENET1K_V1", 'hidden_dim': 512},
     resnet50={'weights': "IMAGENET1K_V2", 'hidden_dim': 2048},
-    efficientnetv2={'weights': "IMAGENET1K_V1", 'hidden_dim': 1280}
+    efficientnet_v2_s={'weights': "IMAGENET1K_V1", 'hidden_dim': 1280},
+    efficientnet_v2_m={'weights': "IMAGENET1K_V1", 'hidden_dim': 1280},
 )

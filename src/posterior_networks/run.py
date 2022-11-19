@@ -66,6 +66,7 @@ def run(config):
                              batch_size=config['batch_size'],
                              lr=config['lr'],
                              loss=config['loss'],
+                             dropout=config['dropout'],
                              regr=config['regr'],
                              seed=config['seed'])
 
@@ -116,6 +117,6 @@ def run(config):
     for k,v in metrics.items():
         print(k, round(v, 3))
 
-    wandb.finish()
+    wandb.finish(quiet=True)
 
     return {**metrics}

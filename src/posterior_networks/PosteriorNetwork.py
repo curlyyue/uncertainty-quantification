@@ -32,6 +32,7 @@ class PosteriorNetwork(nn.Module):
                  batch_size=64,  # Batch size. int
                  lr=1e-3,  # Learning rate. float
                  loss='UCE',  # Loss name. string
+                 dropout=0.1,
                  regr=1e-5,  # Regularization factor in Bayesian loss. float
                  seed=123):  # Random seed for init. int
         super().__init__()
@@ -59,7 +60,8 @@ class PosteriorNetwork(nn.Module):
                                weights=model_info['weights'],
                                )
         self.sequential = torch.nn.Sequential(*(list(model.children())[:-1]),
-                                    nn.Flatten(), 
+                                    nn.Flatten(),
+                                    torch.nn.Dropout(p=dropout),
                                     nn.Linear(model_info['hidden_dim'], self.latent_dim)
         )
         self.batch_norm = nn.BatchNorm1d(num_features=self.latent_dim)
