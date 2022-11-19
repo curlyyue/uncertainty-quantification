@@ -9,12 +9,13 @@ def split_id_ood(config):
     train_data = pd.read_csv(config[f'train_csv'])
     val_data = pd.read_csv(config[f'val_csv'])
     test_data = pd.read_csv(config[f'test_csv'])
-    train_id = train_data[~train_data.region.isin(config['ood_regions'])]
-    train_ood = train_data[train_data.region.isin(config['ood_regions'])]
-    val_id = val_data[~val_data.region.isin(config['ood_regions'])]
-    val_ood = val_data[val_data.region.isin(config['ood_regions'])]
-    test_id = test_data[~test_data.region.isin(config['ood_regions'])]
-    test_ood = test_data[test_data.region.isin(config['ood_regions'])]
+    ood_regions = config['ood_regions'].split(',')
+    train_id = train_data[~train_data.region.isin(ood_regions)]
+    train_ood = train_data[train_data.region.isin(ood_regions)]
+    val_id = val_data[~val_data.region.isin(ood_regions)]
+    val_ood = val_data[val_data.region.isin(ood_regions)]
+    test_id = test_data[~test_data.region.isin(ood_regions)]
+    test_ood = test_data[test_data.region.isin(ood_regions)]
     ood = pd.concat([train_ood, val_ood, test_ood ])
     config['num_classes'] = train_id.label.nunique()
 

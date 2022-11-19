@@ -29,8 +29,8 @@ def run(config):
     torch.manual_seed(config['seed'])
     torch.cuda.manual_seed(config['seed'])
     torch.cuda.manual_seed_all(config['seed'])
-   
-    # wandb.init(project="test-project", entity="uncertainty_tum")
+
+    os.makedirs(config['save_dir'], exist_ok=True)
 
     use_cuda = torch.cuda.is_available()
     config['device'] = "cuda" if use_cuda else "cpu"
@@ -110,7 +110,6 @@ def run(config):
     metrics = test(model, test_dataloader, ood_dataset_loaders, result_path)
     
     config['metrics'] = metrics
-    os.makedirs(config['save_dir'], exist_ok=True)
     with open(os.path.join(config['save_dir'], 'config.json'), 'w') as f:
         json.dump(config, f)
 
