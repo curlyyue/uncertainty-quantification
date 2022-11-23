@@ -12,11 +12,6 @@ import wandb
 import numpy as np
 
 # to do
-<<<<<<< HEAD
-# logic for ood evaluation and test() - Grigor
-# add ood by class
-=======
->>>>>>> 47fba3f738ede118c4543b30c2ec82e288ac8e23
 # augmentations?
 # resize problem in dataset
 # check N
@@ -26,7 +21,6 @@ import numpy as np
 
 def run(config): 
 
-    # fix seeds
     torch.backends.cudnn.enabled = True
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True

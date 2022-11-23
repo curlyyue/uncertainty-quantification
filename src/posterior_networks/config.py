@@ -5,7 +5,9 @@ wb_project = 'test-project', #'clean_runs' test-project,
 train_csv='/lab/project-1/train_label.csv',
 val_csv='/lab/project-1/val_label.csv', 
 test_csv='/lab/project-1/test_label.csv',
-ood_regions='g6',  # OOD dataset regions (g1-g6). should be separated by , like g4,g6
+ood_regions='g6',  # OOD dataset regions (g1-g6). should be separated by comma
+# can also contain class names from 'regu', 'warn', 'comp', 'info'
+# for example 'g5, g6' or 'g5, comp'
 # unscaled_ood,  # If true consider also unscaled versions of ood datasets ?
 # transform_min,  # Minimum value for rescaling input data. float ?
 # transform_max,  # Maximum value for rescaling input data. float ?
