@@ -36,12 +36,30 @@ def split_id_ood(config):
     print('Test ID', test_id.shape[0])
     print('Test OOD', test_ood.shape[0])
     print("Combined OOD", ood.shape[0])
-    transform = transforms.Compose([transforms.ToTensor(),
-        # data augmentation
-        # transforms.GaussianBlur(kernel_size=(5,9), sigma=(0.1,2)),
-        # transforms.ColorJitter(brightness=0.5, hue=0.2),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
-                                    ])
+
+    # data augmentation
+    if config['augmentation'] == 'None':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+        ])
+    elif config['augmentation'] == 'AugMix':
+        transform = transforms.Compose([
+            transforms.AugMix(config['params']['AugMix']['severity'], config['params']['AugMix']['mixture_width']),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+        ])
+    elif config['augmentation'] == 'AutoAug':
+        pass
+    else:
+        raise ValueError('Check augmentation, you have provided unknown region or class', config['augmentation'])
+
+    # transform = transforms.Compose([
+    #     # data augmentation
+    #     # transforms.GaussianBlur(kernel_size=(5,9), sigma=(0.1,2))
+    #     transforms.ToTensor(),
+    #     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+    #                                 ])
     class_encoding = {c: i for i, c in enumerate(sorted(train_id.label.unique()))}
     train_id.loc[:, 'label_encoded'] = train_id.label.map(class_encoding)
     val_id.loc[:, 'label_encoded'] = val_id.label.map(class_encoding)
