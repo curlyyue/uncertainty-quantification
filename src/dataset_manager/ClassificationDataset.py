@@ -2,6 +2,7 @@ import numpy as np
 from torch.utils.data import Dataset
 import torch
 import torchvision
+from PIL import Image
 
 
 class MapillaryDataset(Dataset):
@@ -19,7 +20,8 @@ class MapillaryDataset(Dataset):
 
     def __getitem__(self, idx):
         img_path = self.img_labels.iloc[idx]['path']
-        image = np.load(img_path)
+        img_np = np.load(img_path)
+        image = Image.fromarray(img_np)
         if self.transform:
             image = self.transform(image)
         image = torchvision.transforms.functional.resize(image, [64, 64])

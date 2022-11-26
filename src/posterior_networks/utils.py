@@ -50,7 +50,34 @@ def split_id_ood(config):
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
         ])
     elif config['augmentation'] == 'AutoAug':
-        pass
+        policy = config['params']['AutoAug']['policy']
+        if policy == 'ImageNet':
+                policy = transforms.AutoAugmentPolicy.IMAGENET
+        elif policy == 'CIFAR10':
+                policy = transforms.AutoAugmentPolicy.CIFAR10
+        elif policy == 'SVHN':
+                policy = transforms.AutoAugmentPolicy.SVHN
+        else:
+                ValueError('Check policy, you have provided unknown region or class', policy)
+        transform = transforms.Compose([
+            transforms.AutoAugment(policy=policy),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+        ])
+    elif config['augmentation'] == 'TrivialAug':
+        transform = transforms.Compose([
+            transforms.TrivialAugmentWide(config['params']['TrivialAug']['num_mag_bins']),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+        ])
+    elif config['augmentation'] == 'RandAug':
+        param = tuple(config['params']['RandAug'].values())
+        transform = transforms.Compose([
+            transforms.RandAugment(param[0],param[1], param[2]),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+        ])
+
     else:
         raise ValueError('Check augmentation, you have provided unknown region or class', config['augmentation'])
 
