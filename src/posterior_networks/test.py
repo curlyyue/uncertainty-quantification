@@ -48,16 +48,16 @@ def test(model, test_loader, ood_dataset_loaders):
         wandb.log({'Test ID brier': metrics['brier_score']})
 
         for ood_dataset_name, ood_loader in ood_dataset_loaders.items():
-            orig_Y_all, X_duplicate_all, alpha_pred_all = compute_X_Y_alpha(model, ood_loader)
-            pred_classes = torch.max(alpha_pred_all, dim=-1)[1]
+            ood_orig_Y_all, X_duplicate_all, ood_alpha_pred_all = compute_X_Y_alpha(model, ood_loader)
+            pred_classes = torch.max(ood_alpha_pred_all, dim=-1)[1]
 
-            metrics[f'accuracy_{ood_dataset_name}'] = balanced_accuracy_score(orig_Y_all, pred_classes)
+            metrics[f'accuracy_{ood_dataset_name}'] = balanced_accuracy_score(ood_orig_Y_all, pred_classes)
             metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, 
-                                                                                  ood_alpha=alpha_pred_all, 
+                                                                                  ood_alpha=ood_alpha_pred_all, 
                                                                                   score_type='APR', 
                                                                                   uncertainty_type='aleatoric')
             metrics[f'anomaly_detection_epistemic_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, 
-                                                                                  ood_alpha=alpha_pred_all, 
+                                                                                  ood_alpha=ood_alpha_pred_all, 
                                                                                   score_type='APR', 
                                                                                   uncertainty_type='epistemic')
             wandb.log({f'{ood_dataset_name} aleatoric': metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'],
