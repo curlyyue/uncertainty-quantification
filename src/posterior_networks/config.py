@@ -1,7 +1,7 @@
 config = dict(
 seed = 1,  # Seed for training
 # wb_project = 'clean_runs', #'clean_runs' test-project,
-wb_project = 'transform-tuning', #'clean_runs' test-project, transform-tuning
+wb_project = 'test-project', #'clean_runs' test-project, transform-tuning
 train_csv='/lab/project-1/train_label.csv',
 val_csv='/lab/project-1/val_label.csv', 
 test_csv='/lab/project-1/test_label.csv',
@@ -31,12 +31,12 @@ lr=0.0001,  # Learning rate. float
 loss='UCE',  # Loss name. string
 training_mode='joint',  # 'joint' or 'sequential' training. string
 regr=0.0001, # Regularization factor in Bayesian loss. float
-augmentation = 'RandAug', # or 'None', 'AutoAug', 'AugMix', 'TrivialAug', 'RandAug'
+augmentation = 'ManAug', # or 'None', 'AutoAug', 'AugMix', 'TrivialAug', 'RandAug', 'ManAug'
 params = dict(
     AugMix = {'severity':1, 'mixture_width':1}, # serverity: int in [1-10], mixture_width: int >1
     AutoAug = {'policy':'SVHN'},  # 'CIFAR10', 'SVHN', 'ImageNet'
-    TrivialAug = {'num_mag_bins': 120}, # num_magnitude_bins: int
-    RandAug = {'num_ops': 2, 'magnitude': 9, 'num_mag_bins':31}, # num_ops: int, num of transforms,
+    TrivialAug = {'num_mag_bins': 31}, # num_magnitude_bins: int
+    RandAug = {'num_ops': 2, 'magnitude': 3, 'num_mag_bins':31}, # num_ops: int, num of transforms,
                                                                  # magnitude: int, mag for all transformation
 )
 

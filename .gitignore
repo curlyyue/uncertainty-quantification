@@ -21,7 +21,8 @@ sdist/
 var/
 wheels/
 *.egg-info/
-wandb/
+src/posterior_networks/wandb/
+src/posterior_networks/models/
 .installed.cfg
 *.egg
 MANIFEST

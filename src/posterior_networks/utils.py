@@ -77,16 +77,22 @@ def split_id_ood(config):
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
         ])
+    elif config['augmentation'] == 'ManAug':
+        param = tuple(config['params']['RandAug'].values())
+        transform = transforms.Compose([
+            transforms.AugMix(severity=1, mixture_width=1),
+            transforms.RandAugment(num_ops=2,magnitude=3, num_magnitude_bins=31),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+        ])
 
     else:
         raise ValueError('Check augmentation, you have provided unknown region or class', config['augmentation'])
 
-    # transform = transforms.Compose([
-    #     # data augmentation
-    #     # transforms.GaussianBlur(kernel_size=(5,9), sigma=(0.1,2))
-    #     transforms.ToTensor(),
-    #     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
-    #                                 ])
+    transform_val_test = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+                                    ])
     class_encoding = {c: i for i, c in enumerate(sorted(train_id.label.unique()))}
     train_id.loc[:, 'label_encoded'] = train_id.label.map(class_encoding)
     val_id.loc[:, 'label_encoded'] = val_id.label.map(class_encoding)
@@ -95,10 +101,10 @@ def split_id_ood(config):
     config['num_classes'] = train_id.label.nunique()
 
     train_id_dataset = MapillaryDataset(train_id, transform=transform)
-    val_id_dataset = MapillaryDataset(val_id, transform=transform)
-    test_id_dataset = MapillaryDataset(test_id, transform=transform)
-    test_ood_dataset = MapillaryDataset(test_ood, transform=transform)
-    ood_dataset = MapillaryDataset(ood, transform=transform)
+    val_id_dataset = MapillaryDataset(val_id, transform=transform_val_test)
+    test_id_dataset = MapillaryDataset(test_id, transform=transform_val_test)
+    test_ood_dataset = MapillaryDataset(test_ood, transform=transform_val_test)
+    ood_dataset = MapillaryDataset(ood, transform=transform_val_test)
 
     train_id_dataloader = torch.utils.data.DataLoader(train_id_dataset,
                                                       batch_size=config['batch_size'],
