@@ -2,6 +2,7 @@ import torch
 import numpy as np
 import os
 import wandb
+from sklearn.metrics import balanced_accuracy_score
 
 
 def compute_loss_accuracy(model, loader, device):
@@ -21,7 +22,7 @@ def compute_loss_accuracy(model, loader, device):
                 Y_all = torch.cat([Y_all, Y.view(-1).to("cpu")], dim=0)
             loss += model.grad_loss.item()
         loss = loss / Y_pred_all.size(0)
-        accuracy = ((Y_pred_all == Y_all).float().sum() / Y_pred_all.size(0)).item()
+        accuracy = balanced_accuracy_score(Y_all, Y_pred_all)
     model.train()
     return loss, accuracy
 
@@ -30,8 +31,8 @@ def compute_loss_accuracy(model, loader, device):
 def train(model, train_loader, val_loader, config):
     device = config['device']
     model.train()
-    # train_losses, val_losses, train_accuracies, val_accuracies = [], [], [], []
     best_val_loss = float("Inf")
+    best_val_acc = float('Inf')
     bad_epochs = 0
     print('Training starts')
     for epoch in range(config['max_epochs']):
@@ -41,10 +42,7 @@ def train(model, train_loader, val_loader, config):
             X_train, Y_train_hot = X_train.to(device), Y_train_hot.to(device)
             model(X_train, Y_train_hot)
             model.step()
-            # loss = model.grad_loss.cpu().item()
-            # wandb.log({"Train loss": model.grad_loss.cpu().item()})
-            # wandb.log({"Train loss": loss})
-            # print(type(loss), loss)
+            wandb.log({"Train loss": model.grad_loss.cpu().item()})
 
         # Stats on data sets
         train_loss, train_accuracy = compute_loss_accuracy(model, train_loader, device)
@@ -65,6 +63,7 @@ def train(model, train_loader, val_loader, config):
 
         if best_val_loss > val_loss:
             best_val_loss = val_loss
+            best_val_acc = val_accuracy
             torch.save({'epoch': epoch, 'model_state_dict': model.state_dict(), 'val_acc': val_accuracy}, 
                         os.path.join(config['save_dir'], 'best_model.pth'))
             bad_epochs = 0
@@ -75,6 +74,9 @@ def train(model, train_loader, val_loader, config):
         if bad_epochs >= config['patience']:
             print(f'Early stopping after epoch {epoch}')
             break
+    
+    print('Best Val Accuracy', best_val_acc)
+    wandb.log({"Best Val accuracy": best_val_acc})
 
     return
 

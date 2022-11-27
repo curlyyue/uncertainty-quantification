@@ -1,7 +1,6 @@
 import torch
-import pickle
-from src.results_manager.metrics_prior import accuracy, confidence, brier_score, anomaly_detection
-from config import config
+from src.results_manager.metrics_prior import confidence, brier_score, anomaly_detection
+from sklearn.metrics import balanced_accuracy_score
 import wandb
 
 use_cuda = torch.cuda.is_available()
@@ -27,43 +26,38 @@ def compute_X_Y_alpha(model, loader, alpha_only=False):
         return orig_Y_all, X_duplicate_all, alpha_pred_all
 
 
-def test(model, test_loader, ood_dataset_loaders, result_path='saved_results'):
+def test(model, test_loader, ood_dataset_loaders):
     model.to(device)
     model.eval()
 
     with torch.no_grad():
         orig_Y_all, X_duplicate_all, alpha_pred_all = compute_X_Y_alpha(model, test_loader)
 
-        # Save each data result
-        # n_test_samples = orig_Y_all.size(0)
-        # full_results_dict = {'Y': orig_Y_all.cpu().detach().numpy(),
-        #                      'X': X_duplicate_all.view(n_test_samples, -1).cpu().detach().numpy(),
-        #                      'alpha': alpha_pred_all.cpu().detach().numpy()}
-        # with open(f'{result_path}.pickle', 'wb') as handle:
-        #     pickle.dump(full_results_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-        # Save metrics
         metrics = {}
-        metrics['accuracy'] = accuracy(Y=orig_Y_all, alpha=alpha_pred_all)
+        pred_classes = torch.max(alpha_pred_all, dim=-1)[1]
+        metrics['accuracy_TestID'] = balanced_accuracy_score(orig_Y_all, pred_classes)
         metrics['confidence_aleatoric'] = confidence(Y= orig_Y_all, alpha=alpha_pred_all,
                                                      score_type='APR', uncertainty_type='aleatoric')
         metrics['confidence_epistemic'] = confidence(Y= orig_Y_all, alpha=alpha_pred_all, 
                                                      score_type='APR', uncertainty_type='epistemic')
         metrics['brier_score'] = brier_score(Y= orig_Y_all, alpha=alpha_pred_all)
 
-        wandb.log({'Test Accuracy': metrics['accuracy']})
+        wandb.log({'Test Accuracy': metrics['accuracy_TestID']})
         wandb.log({'Test ID aleatoric': metrics['confidence_aleatoric'], 
                    'Test ID epistemic': metrics['confidence_epistemic']})
         wandb.log({'Test ID brier': metrics['brier_score']})
 
         for ood_dataset_name, ood_loader in ood_dataset_loaders.items():
-            ood_alpha_pred_all = compute_X_Y_alpha(model, ood_loader, alpha_only=True)
+            orig_Y_all, X_duplicate_all, alpha_pred_all = compute_X_Y_alpha(model, ood_loader)
+            pred_classes = torch.max(alpha_pred_all, dim=-1)[1]
+
+            metrics[f'accuracy_{ood_dataset_name}'] = balanced_accuracy_score(orig_Y_all, pred_classes)
             metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, 
-                                                                                  ood_alpha=ood_alpha_pred_all, 
+                                                                                  ood_alpha=alpha_pred_all, 
                                                                                   score_type='APR', 
                                                                                   uncertainty_type='aleatoric')
             metrics[f'anomaly_detection_epistemic_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, 
-                                                                                  ood_alpha=ood_alpha_pred_all, 
+                                                                                  ood_alpha=alpha_pred_all, 
                                                                                   score_type='APR', 
                                                                                   uncertainty_type='epistemic')
             wandb.log({f'{ood_dataset_name} aleatoric': metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'],

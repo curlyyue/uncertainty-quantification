@@ -12,11 +12,7 @@ import wandb
 import numpy as np
 
 # to do
-# augmentations?
 # resize problem in dataset
-# check N
-# check k_lipschitz
-# check unscaled_ood
 
 
 def run(config): 
@@ -69,11 +65,6 @@ def run(config):
                              regr=config['regr'],
                              seed=config['seed'])
 
-    # full_config_name = ''
-    # for k, v in full_config_dict.items():
-    #     full_config_name += str(v) + '-'
-    # full_config_name = full_config_name[:-1]
-    # model_path = f'{directory_model}/model-dpn-{full_config_name}'
     model.to(config['device'])
     if config['training_mode'] == 'joint':
         train(model, train_dataloader, val_dataloader, config=config)
@@ -96,18 +87,12 @@ def run(config):
     ## Test model ##
     ################
 
-    # for ood_dataset_name in ood_dataset_names:
-    #     if unscaled_ood:
-            # dataset = ClassificationDataset(f'{directory_dataset}/{ood_dataset_name}.csv',
-            #                                 input_dims=input_dims, output_dim=output_dim,
-            #                                 seed=None)
-            # ood_dataset_loaders[ood_dataset_name + '_unscaled'] = torch.utils.data.DataLoader(dataset, batch_size=2 * batch_size, num_workers=4, pin_memory=True)
     ood_dataset_loaders = {}
     ood_dataset_loaders['Test OOD'] = ood_test_dataloader
     ood_dataset_loaders['Combined OOD'] = ood_dataloader
     result_path = os.path.join(config['save_dir'], 'best_model.pth')
     model.load_state_dict(torch.load(f'{result_path}')['model_state_dict'])
-    metrics = test(model, test_dataloader, ood_dataset_loaders, result_path)
+    metrics = test(model, test_dataloader, ood_dataset_loaders)
     
     config['metrics'] = metrics
     with open(os.path.join(config['save_dir'], 'config.json'), 'w') as f:
