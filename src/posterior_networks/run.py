@@ -39,11 +39,16 @@ def run(config):
      ood_test_dataloader, 
      ood_dataloader
     ) = split_id_ood(config)
-    N = train_dataloader.dataset.N
-    print("Datasets and Dataloaders created")
 
     wandb.init(project=config["wb_project"], entity="uncertainty_tum", 
-                  config=config)
+                config=config, 
+                id=config['save_dir'].split('/')[-1]
+                )
+
+    N = train_dataloader.dataset.N
+    config['N'] = N.tolist()
+    print("Datasets and Dataloaders created")
+
     #################
     ## Train model ##
     #################
@@ -99,7 +104,8 @@ def run(config):
         json.dump(config, f)
 
     for k,v in metrics.items():
-        print(k, round(v, 3))
+        if k != 'TestID_per_class_scores':
+            print(k, round(v, 3))
 
     wandb.finish(quiet=True)
 

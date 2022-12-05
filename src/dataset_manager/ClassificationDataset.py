@@ -14,6 +14,8 @@ class MapillaryDataset(Dataset):
         N = self.img_labels.label_encoded.value_counts().sort_index().values
         self.N = torch.tensor(N)
         self.output_dim = self.img_labels.label_encoded.nunique()
+        self.labels = sorted(data_df.label.unique())
+
 
     def __len__(self):
         return len(self.img_labels)
