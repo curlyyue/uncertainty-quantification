@@ -28,13 +28,14 @@ def compute_loss_accuracy(model, loader, device):
 
 
 # Joint training for full model
-def train(model, train_loader, val_loader, config):
+def train(model, train_loader, val_loader, config, ablation=False):
     device = config['device']
     model.train()
     best_val_loss = float("Inf")
     best_val_acc = float('Inf')
     bad_epochs = 0
     print('Training starts')
+    train_losses, val_losses, train_accuracies, val_accuracies = [], [], [], []
     for epoch in range(config['max_epochs']):
         for batch_index, (X_train, Y_train) in enumerate(train_loader):
             Y_train_hot = torch.zeros(Y_train.shape[0], train_loader.dataset.output_dim)
@@ -50,6 +51,10 @@ def train(model, train_loader, val_loader, config):
         wandb.log({"Val loss": val_loss, "Train loss": train_loss, 'epoch': epoch})
         wandb.log({"Val accuracy": val_accuracy, 'epoch': epoch,
                    "Train Accuracy": train_accuracy})
+        train_losses.append(round(train_loss, 3))
+        val_losses.append(round(val_loss, 3))
+        train_accuracies.append(train_accuracy)
+        val_accuracies.append(val_accuracy)
 
         print("Epoch {} -> Val loss {} | Val Acc.: {}".format(epoch, round(val_loss, 3), round(val_accuracy, 3)))
 
@@ -77,39 +82,35 @@ def train(model, train_loader, val_loader, config):
     
     print('Best Val Accuracy', best_val_acc)
     wandb.log({"Best Val accuracy": best_val_acc})
-
-    return
+    if ablation == False:
+        return 
+    else:
+        return train_losses, val_losses, train_accuracies, val_accuracies
 
 # Joint training method for ablated model
-def train_sequential(model, train_loader, val_loader, max_epochs=200, frequency=2, patience=5, model_path='saved_model', full_config_dict={}):
+# - why add losses? how to compare? how to log in wandb, in each epoch?
+def train_sequential(model, train_loader, val_loader, config):
     loss_1 = 'CE'
     loss_2 = model.loss
 
     print("### Encoder training ###")
     model.loss = loss_1
     model.no_density = True
-    train_losses_1, val_losses_1, train_accuracies_1, val_accuracies_1 = train(model,
-                                                                               train_loader,
-                                                                               val_loader,
-                                                                               max_epochs=max_epochs,
-                                                                               frequency=frequency,
-                                                                               patience=patience,
-                                                                               model_path=model_path,
-                                                                               full_config_dict=full_config_dict)
+    train_losses_1, val_losses_1, train_accuracies_1, val_accuracies_1 = \
+        train(model, train_loader, val_loader, config, ablation=True)
     print("### Normalizing Flow training ###")
-    model.load_state_dict(torch.load(f'{model_path}')['model_state_dict'])
+    model.load_state_dict(torch.load(os.path.join(config['save_dir'], 'best_model.pth'))['model_state_dict'])
     for param in model.sequential.parameters():
         param.requires_grad = False
     model.loss = loss_2
     model.no_density = False
-    train_losses_2, val_losses_2, train_accuracies_2, val_accuracies_2 = train(model,
-                                                                               train_loader,
-                                                                               val_loader,
-                                                                               max_epochs=max_epochs,
-                                                                               frequency=frequency,
-                                                                               patience=patience,
-                                                                               model_path=model_path,
-                                                                               full_config_dict=full_config_dict)
+    train_losses_2, val_losses_2, train_accuracies_2, val_accuracies_2 = \
+        train(model, train_loader, val_loader, config, ablation=True)
+        
+    # wandb.log({"Val loss": val_loss, "Train loss": train_loss, 'epoch': epoch})
+    # wandb.log({"Val accuracy": val_accuracy, 'epoch': epoch,
+    #                "Train Accuracy": train_accuracy})
+        
 
     return train_losses_1 + train_losses_2, \
            val_losses_1 + val_losses_2, \

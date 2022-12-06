@@ -71,15 +71,12 @@ def run(config):
     elif config['training_mode'] == 'sequential':
         assert not config['no_density']
         # should be fixed
-        train_losses, val_losses, train_accuracies, val_accuracies = train_sequential(model,
-                                                                                       train_loader,
-                                                                                       val_loader,
-                                                                                       max_epochs=max_epochs,
-                                                                                       frequency=frequency,
-                                                                                       patience=patience,
-                                                                                       model_path=model_path,
-                                                                                       full_config_dict=full_config_dict)
-        pass
+        train_losses, val_losses, train_accuracies, val_accuracies = train_sequential(model,train_dataloader, val_dataloader, config=config)
+        print('trian_losses:', train_losses)
+        print('val_losses', val_losses)
+        print('train_accuracies', train_accuracies)
+        print('val_accuracies', val_accuracies)
+
     else:
         raise NotImplementedError
 
