@@ -1,6 +1,7 @@
 import torch
 from src.results_manager.metrics_prior import confidence, brier_score, anomaly_detection
 from sklearn.metrics import balanced_accuracy_score
+from sklearn.metrics import classification_report
 import wandb
 
 use_cuda = torch.cuda.is_available()
@@ -29,13 +30,17 @@ def compute_X_Y_alpha(model, loader, alpha_only=False):
 def test(model, test_loader, ood_dataset_loaders):
     model.to(device)
     model.eval()
-
+    class_names = test_loader.dataset.labels
     with torch.no_grad():
         orig_Y_all, X_duplicate_all, alpha_pred_all = compute_X_Y_alpha(model, test_loader)
 
         metrics = {}
         pred_classes = torch.max(alpha_pred_all, dim=-1)[1]
         metrics['accuracy_TestID'] = balanced_accuracy_score(orig_Y_all, pred_classes)
+        metrics['TestID_per_class_scores'] = classification_report(orig_Y_all, pred_classes, 
+                                             target_names=class_names, output_dict=True)
+        print('TestID per class scores')
+        print(classification_report(orig_Y_all, pred_classes, target_names=class_names))
         metrics['confidence_aleatoric'] = confidence(Y= orig_Y_all, alpha=alpha_pred_all,
                                                      score_type='APR', uncertainty_type='aleatoric')
         metrics['confidence_epistemic'] = confidence(Y= orig_Y_all, alpha=alpha_pred_all, 
@@ -64,5 +69,3 @@ def test(model, test_loader, ood_dataset_loaders):
                        f'{ood_dataset_name} epistemic': metrics[f'anomaly_detection_epistemic_{ood_dataset_name}']})
     
     return metrics
-
-
