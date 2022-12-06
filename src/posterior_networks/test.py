@@ -72,5 +72,5 @@ def test(model, test_loader, ood_dataset_loaders):
                        f'{ood_dataset_name} epistemic': metrics[f'anomaly_detection_epistemic_{ood_dataset_name}'],
                        f'accuracy_{ood_dataset_name}': metrics[f'accuracy_{ood_dataset_name}']
                        })
-
+    wandb.log(metrics)
     return metrics
