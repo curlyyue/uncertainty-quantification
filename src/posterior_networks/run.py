@@ -40,15 +40,14 @@ def run(config):
      ood_dataloader
     ) = split_id_ood(config)
 
+    N = train_dataloader.dataset.N
+    config['N'] = N.tolist()
+    config['metrics'] = {}
+    print("Datasets and Dataloaders created")
     wandb.init(project=config["wb_project"], entity="uncertainty_tum", 
                 config=config, 
                 id=config['save_dir'].split('/')[-1]
                 )
-
-    N = train_dataloader.dataset.N
-    config['N'] = N.tolist()
-    print("Datasets and Dataloaders created")
-
     #################
     ## Train model ##
     #################

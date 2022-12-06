@@ -56,7 +56,10 @@ def test(model, test_loader, ood_dataset_loaders):
             ood_orig_Y_all, X_duplicate_all, ood_alpha_pred_all = compute_X_Y_alpha(model, ood_loader)
             pred_classes = torch.max(ood_alpha_pred_all, dim=-1)[1]
 
-            metrics[f'accuracy_{ood_dataset_name}'] = balanced_accuracy_score(ood_orig_Y_all, pred_classes)
+            if len(class_names) == 4:
+                metrics[f'accuracy_{ood_dataset_name}'] = balanced_accuracy_score(ood_orig_Y_all, pred_classes)
+            else:
+                metrics[f'accuracy_{ood_dataset_name}'] = 0
             metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'] = anomaly_detection(alpha=alpha_pred_all, 
                                                                                   ood_alpha=ood_alpha_pred_all, 
                                                                                   score_type='APR', 
@@ -66,6 +69,8 @@ def test(model, test_loader, ood_dataset_loaders):
                                                                                   score_type='APR', 
                                                                                   uncertainty_type='epistemic')
             wandb.log({f'{ood_dataset_name} aleatoric': metrics[f'anomaly_detection_aleatoric_{ood_dataset_name}'],
-                       f'{ood_dataset_name} epistemic': metrics[f'anomaly_detection_epistemic_{ood_dataset_name}']})
-    
+                       f'{ood_dataset_name} epistemic': metrics[f'anomaly_detection_epistemic_{ood_dataset_name}'],
+                       f'accuracy_{ood_dataset_name}': metrics[f'accuracy_{ood_dataset_name}']
+                       })
+
     return metrics
