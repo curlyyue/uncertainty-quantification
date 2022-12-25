@@ -1,13 +1,14 @@
-import numpy as np
 import torch
 from torch import nn
-from torch import autograd
 from torch.distributions.dirichlet import Dirichlet
+from transformers import AutoModelForImageClassification
+
 from src.architectures.linear_sequential import linear_sequential
 from src.posterior_networks.NormalizingFlowDensity import NormalizingFlowDensity
 from src.posterior_networks.BatchedNormalizingFlowDensity import BatchedNormalizingFlowDensity
 from src.posterior_networks.MixtureDensity import MixtureDensity
 from src.posterior_networks.config import pretrained_info
+from src.posterior_networks.utils import Prepare_logits
 
 __budget_functions__ = {'one': lambda N: torch.ones_like(N),
                         'log': lambda N: torch.log(N + 1.),
@@ -56,10 +57,15 @@ class PosteriorNetwork(nn.Module):
         if architecture not in pretrained_info:
             raise NotImplementedError
         model_info = pretrained_info[architecture]
-        model = torch.hub.load("pytorch/vision", architecture, 
-                               weights=model_info['weights'],
-                               )
+        if model_info['source'] == 'torchvision':
+            model = torch.hub.load("pytorch/vision", architecture, 
+                                weights=model_info['weights'],
+                                )
+        elif model_info['source'] == 'huggingface':
+            model = AutoModelForImageClassification.from_pretrained(model_info['weights'])
+        
         self.sequential = torch.nn.Sequential(*(list(model.children())[:-1]),
+                                    Prepare_logits(model_info['source']),
                                     nn.Flatten(),
                                     torch.nn.Dropout(p=dropout),
                                     nn.Linear(model_info['hidden_dim'], self.latent_dim)
