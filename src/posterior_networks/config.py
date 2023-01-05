@@ -23,7 +23,7 @@ k_lipschitz=None,  # Lipschitz constant. float or None (if no lipschitz)
 budget_function='id',  # Budget function name applied on class count. name
 
 # Training parameters
-save_dir = 'models/second_run',  # Path to save resutls. string
+save_dir = 'models/exp',  # Path to save resutls. string
 max_epochs=10,  # Maximum number of epochs for training 
 patience=5,  # Patience for early stopping. int
 batch_size=64,  # Batch size. int
@@ -31,12 +31,12 @@ lr=0.0001,  # Learning rate. float
 loss='UCE',  # Loss name. string
 training_mode='joint',  # 'joint' or 'sequential' training. string
 regr=0.0001, # Regularization factor in Bayesian loss. float
-augmentation = 'ManAug', # or 'None', 'AutoAug', 'AugMix', 'TrivialAug', 'RandAug', 'ManAug'
+augmentation = 'RandAug', # or 'None', 'AutoAug', 'AugMix', 'TrivialAug', 'RandAug', 'ManAug'
 params = dict(
     AugMix = {'severity':1, 'mixture_width':1}, # serverity: int in [1-10], mixture_width: int >1
     AutoAug = {'policy':'SVHN'},  # 'CIFAR10', 'SVHN', 'ImageNet'
     TrivialAug = {'num_mag_bins': 31}, # num_magnitude_bins: int
-    RandAug = {'num_ops': 2, 'magnitude': 3, 'num_mag_bins':31}, # num_ops: int, num of transforms,
+    RandAug = {'num_ops': 3, 'magnitude': 3, 'num_mag_bins':31}, # num_ops: int, num of transforms,
                                                                  # magnitude: int, mag for all transformation
 )
 

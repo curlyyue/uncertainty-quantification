@@ -48,7 +48,7 @@ def train(model, train_loader, val_loader, config, ablation=False):
         # Stats on data sets
         train_loss, train_accuracy = compute_loss_accuracy(model, train_loader, device)
         val_loss, val_accuracy = compute_loss_accuracy(model, val_loader, device)
-        wandb.log({"Val loss": val_loss, "Train loss": train_loss, 'epoch': epoch})
+        wandb.log({"Val loss": val_loss, 'epoch': epoch})
         wandb.log({"Val accuracy": val_accuracy, 'epoch': epoch,
                    "Train Accuracy": train_accuracy})
         train_losses.append(round(train_loss, 3))
@@ -88,7 +88,6 @@ def train(model, train_loader, val_loader, config, ablation=False):
         return train_losses, val_losses, train_accuracies, val_accuracies
 
 # Joint training method for ablated model
-# - why add losses? how to compare? how to log in wandb, in each epoch?
 def train_sequential(model, train_loader, val_loader, config):
     loss_1 = 'CE'
     loss_2 = model.loss
@@ -98,18 +97,16 @@ def train_sequential(model, train_loader, val_loader, config):
     model.no_density = True
     train_losses_1, val_losses_1, train_accuracies_1, val_accuracies_1 = \
         train(model, train_loader, val_loader, config, ablation=True)
+
     print("### Normalizing Flow training ###")
-    model.load_state_dict(torch.load(os.path.join(config['save_dir'], 'best_model.pth'))['model_state_dict'])
+    model.load_state_dict(torch.load(os.path.join(config['save_dir'],
+                            'best_model.pth'))['model_state_dict'])
     for param in model.sequential.parameters():
         param.requires_grad = False
     model.loss = loss_2
     model.no_density = False
     train_losses_2, val_losses_2, train_accuracies_2, val_accuracies_2 = \
         train(model, train_loader, val_loader, config, ablation=True)
-        
-    # wandb.log({"Val loss": val_loss, "Train loss": train_loss, 'epoch': epoch})
-    # wandb.log({"Val accuracy": val_accuracy, 'epoch': epoch,
-    #                "Train Accuracy": train_accuracy})
         
 
     return train_losses_1 + train_losses_2, \
