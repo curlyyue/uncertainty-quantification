@@ -123,3 +123,15 @@ def split_id_ood(config):
                                                 num_workers=6, pin_memory=True)
 
     return train_id_dataloader, val_id_dataloader, test_id_dataloader, test_ood_dataloader, ood_dataloader
+
+
+class Prepare_logits(torch.nn.Module):
+    def __init__(self, source):
+        super().__init__()
+        self.source = source
+
+    def forward(self, x): 
+        if self.source == 'huggingface':
+            return torch.nn.AdaptiveAvgPool2d(output_size=(1, 1))(x.last_hidden_state)
+
+        return x
